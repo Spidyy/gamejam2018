@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4903111116148228}
   - component: {fileID: 212789988597202440}
   m_Layer: 0
-  m_Name: Treeline1Tile
+  m_Name: Treeline2Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1898543689
   m_SortingLayer: -4
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 5bab58973573e49c787e9295d61e8428, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: cc22bbac5b3434faf8c34a9e6fdd055c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

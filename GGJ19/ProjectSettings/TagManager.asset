@@ -42,6 +42,9 @@ TagManager:
   - name: Background
     uniqueID: 2539262707
     locked: 0
+  - name: Treeline
+    uniqueID: 1898543689
+    locked: 0
   - name: Road
     uniqueID: 1293407691
     locked: 0

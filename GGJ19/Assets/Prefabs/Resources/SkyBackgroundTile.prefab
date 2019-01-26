@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4903111116148228}
   - component: {fileID: 212789988597202440}
   m_Layer: 0
-  m_Name: Treeline1Tile
+  m_Name: SkyBackgroundTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,10 +69,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1898543689
-  m_SortingLayer: -4
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 5bab58973573e49c787e9295d61e8428, type: 3}
+  m_SortingLayerID: -1755704589
+  m_SortingLayer: -5
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 39f64c30e1b8d427bb74d78b327cd3f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
