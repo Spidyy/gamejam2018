@@ -38,6 +38,7 @@ stdout.log
 # ===============
 # Workspace files
 **/.vscode/
+**/.vs/
 # Plugin
 **/VSCode.cs*
 
