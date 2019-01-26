@@ -8,13 +8,14 @@ public class EncounterSystem : MonoBehaviour
 {
     public const string k_folderPath = "Events";
 
+    [SerializeField]
     private Encounter[] mEncounters = null;
 
-    public EncounterSystem()
+    void Start()
     {
         mEncounters = LoadData(k_folderPath);
 
-        if(mEncounters == null)
+        if (mEncounters == null)
         {
             Debug.LogAssertion("No events could be loaded !");
         }
@@ -36,13 +37,13 @@ public class EncounterSystem : MonoBehaviour
 
                 foreach(XmlNode childNode in xmlDocument.DocumentElement)
                 {
-                    if (childNode.Name == "encounter")
+                    if (childNode.Name == "event")
                     {
                         Encounter newEncounter = new Encounter();
                         newEncounter.Read(childNode);
                         tempEncounter.Add(newEncounter);
                     }
-                    else
+                    else if (childNode.Name != "#comment")
                     {
                         Debug.LogError("Wrong node name : " + childNode.Name + " in xml document.");
                     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Xml;
 
+[System.Serializable]
 public class Encounter
 {
     public static readonly Dictionary<Stat, string> sStatToString = new Dictionary<Stat, string>
@@ -20,81 +21,100 @@ public class Encounter
         {"gold", Stat.GOLD}
     };
 
+    [System.Serializable]
     public class Outcome
     {
         public string Text;
         public string CloseText;
         public int Chance;
-        public Dictionary<Stat, int> StatChanges;
+        public KeyValuePair<Stat, int>[] StatChanges;
 
-        public void Read(XmlNode iOutcomeNode)
+        public void Read(XmlNode iOutcomeNode, string id)
         {
-            StatChanges = new Dictionary<Stat, int>();
+            List<KeyValuePair<Stat, int>>  tempStatChanges = new List<KeyValuePair<Stat, int>>();
 
             foreach(XmlNode childNode in iOutcomeNode)
             {
                 if(childNode.Name == "text")
                 {
-                    Text = childNode.Value;
+                    Text = childNode.InnerText;
                 }
                 else if(childNode.Name == "close")
                 {
-                    CloseText = childNode.Value;
+                    CloseText = childNode.InnerText;
                 }
                 else if(childNode.Name == "hp")
                 {
-                    StatChanges.Add(Stat.HP, int.Parse(childNode.Value));
+                    tempStatChanges.Add(new KeyValuePair<Stat, int>(Stat.HP, int.Parse(childNode.InnerText)));
                 }
                 else if (childNode.Name == "stamina")
                 {
-                    StatChanges.Add(Stat.STA, int.Parse(childNode.Value));
+                    tempStatChanges.Add(new KeyValuePair<Stat, int>(Stat.STA, int.Parse(childNode.InnerText)));
                 }
                 else if (childNode.Name == "hunger")
                 {
-                    StatChanges.Add(Stat.HUN, int.Parse(childNode.Value));
+                    tempStatChanges.Add(new KeyValuePair<Stat, int>(Stat.HUN, int.Parse(childNode.InnerText)));
                 }
                 else if (childNode.Name == "gold")
                 {
-                    StatChanges.Add(Stat.GOLD, int.Parse(childNode.Value));
+                    tempStatChanges.Add(new KeyValuePair<Stat, int>(Stat.GOLD, int.Parse(childNode.InnerText)));
                 }
-                else
+                else if (childNode.Name != "#comment")
                 {
-                    Debug.LogError("Wrong node name : " + childNode.Name + " in outcome node.");
+                    Debug.LogWarning("Wrong node name : " + childNode.Name + " in outcome node of event " + id);
                 }
+            }
+
+            foreach(XmlAttribute attribute in iOutcomeNode.Attributes)
+            {
+                if(attribute.Name == "chance")
+                {
+                    Chance = int.Parse(attribute.InnerText);
+                }
+            }
+
+            if(tempStatChanges.Count > 0)
+            {
+                StatChanges = tempStatChanges.ToArray();
             }
         }
     }
 
+    [System.Serializable]
     public class Choice
     {
         public string Text;
         public Outcome[] Outcomes;
-        public int totalOutcomeChances;
+        public int TotalOutcomeChances
+        {
+            get;
+            private set;
+        }
 
-        public void Read(XmlNode iChoiceNode)
+        public void Read(XmlNode iChoiceNode, string id)
         {
             List<Outcome> tempOutcomes = new List<Outcome>();
             foreach (XmlNode childNode in iChoiceNode.ChildNodes)
             {
                 if (childNode.Name == "text")
                 {
-                    Text = childNode.Value;
+                    Text = childNode.InnerText;
                 }
                 else if (childNode.Name == "outcome")
                 {
                     Outcome newOutcome = new Outcome();
-                    newOutcome.Read(childNode);
+                    newOutcome.Read(childNode, id);
                     tempOutcomes.Add(newOutcome);
                 }
-                else
+                else if (childNode.Name != "#comment")
                 {
-                    Debug.LogError("Wrong node name : " + childNode.Name + " in choice node.");
+                    Debug.LogWarning("Wrong node name : " + childNode.Name + " in choice node of event " + id);
                 }
             }
 
             if(string.IsNullOrEmpty(Text))
             {
-                Debug.LogAssertion("You are missing a text for an outcome.");
+                Debug.LogAssertion("You are missing a text for a choice of event " + id);
             }
 
             if(tempOutcomes.Count > 0)
@@ -102,10 +122,10 @@ public class Encounter
                 Outcomes = tempOutcomes.ToArray();
             }
 
-            totalOutcomeChances = 0;
+            TotalOutcomeChances = 0;
             foreach (Outcome outcome in Outcomes)
             {
-                totalOutcomeChances += outcome.Chance;
+                TotalOutcomeChances += outcome.Chance;
             }
         }
     }
@@ -117,41 +137,45 @@ public class Encounter
 
     public void Read(XmlNode iEncounterNode)
     {
+        Id = "Unknown";
+        Text = null;
+        Tier = 1;
+
         List<Choice> tempChoices = new List<Choice>();
         foreach (XmlNode childNode in iEncounterNode.ChildNodes)
         {
             if(childNode.Name == "id")
             {
-                Id = childNode.Value;
+                Id = childNode.InnerText;
             }
             if (childNode.Name == "text")
             {
-                Text = childNode.Value;
+                Text = childNode.InnerText;
             }
             else if(childNode.Name == "tier")
             {
-                Tier = int.Parse(childNode.Value);
+                Tier = int.Parse(childNode.InnerText);
             }
             else if(childNode.Name == "choice")
             {
                 Choice newChoice = new Choice();
-                newChoice.Read(childNode);
+                newChoice.Read(childNode, Id);
                 tempChoices.Add(newChoice);
             }
-            else
+            else if(childNode.Name != "#comment")
             {
-                Debug.LogError("Wrong node name : " + childNode.Name + " in encounter node.");
+                Debug.LogWarning("Wrong node name : " + childNode.Name + " in event node of event " + Id);
             }
         }
 
         if(tempChoices.Count == 0)
         {
-            Debug.LogAssertion("You need to have at least one choice for encounter " + Id);
+            Debug.LogAssertion("You need to have at least one choice for event " + Id);
         }
 
         if(string.IsNullOrEmpty(Text))
         {
-            Debug.LogAssertion("You are missing a text for encounter " + Id);
+            Debug.LogAssertion("You are missing a text for event " + Id);
         }
 
         Choices = tempChoices.ToArray();
