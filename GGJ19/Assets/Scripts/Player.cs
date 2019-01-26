@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
     {
         m_currentDistance += Time.deltaTime * m_speedMetresPerSecond;
         m_moving = true;
-        Debug.Log(m_currentDistance);
     }
 
     public void StopAt(float distance)

@@ -17,7 +17,7 @@ public class GameDirector : MonoBehaviour
     public EncounterUIController m_encounterUI;
     public float m_eventInterval = 5f;
 
-    private ScrollingObject[] m_scrollingObjects;
+    private ParallaxLayer[] m_scrollingObjects;
 
     private float m_nextEventDistance;
 
@@ -26,7 +26,7 @@ public class GameDirector : MonoBehaviour
         m_player = FindObjectOfType<Player>();
         LogUtils.Assert(m_player != null, "Player is null");
 
-        m_scrollingObjects = FindObjectsOfType<ScrollingObject>();
+        m_scrollingObjects = FindObjectsOfType<ParallaxLayer>();
     }
 
     private void Start ()
