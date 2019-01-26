@@ -9,7 +9,7 @@ using TagFramework;
 
 // runs the core loop of the game
 //
-public class GameDirector : MonoBehaviour
+public class GameDirector : MonoSingleton<GameDirector>
 {
     [HideInInspector]
     public Player m_player;

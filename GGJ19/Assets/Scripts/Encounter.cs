@@ -148,7 +148,7 @@ public class Encounter
             {
                 Id = childNode.InnerText;
             }
-            if (childNode.Name == "text")
+            else if (childNode.Name == "text")
             {
                 Text = childNode.InnerText;
             }

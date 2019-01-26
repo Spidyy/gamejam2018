@@ -89,20 +89,34 @@ public class EncounterSystem : MonoBehaviour
             foreach (TextAsset xmlFile in xmlFiles)
             {
                 XmlDocument xmlDocument = new XmlDocument();
+                Debug.Log("Loading file " + xmlFile.name);
                 xmlDocument.LoadXml(xmlFile.text);
 
-                foreach(XmlNode childNode in xmlDocument.DocumentElement)
+                if (xmlDocument.DocumentElement.Name == "events")
                 {
-                    if (childNode.Name == "event")
+                    foreach (XmlNode childNode in xmlDocument.DocumentElement)
                     {
-                        Encounter newEncounter = new Encounter();
-                        newEncounter.Read(childNode);
-                        tempEncounter.Add(newEncounter);
+                        if (childNode.Name == "event")
+                        {
+                            Encounter newEncounter = new Encounter();
+                            newEncounter.Read(childNode);
+                            tempEncounter.Add(newEncounter);
+                        }
+                        else if (childNode.Name != "#comment")
+                        {
+                            Debug.LogError("Wrong node name : " + childNode.Name + " in xml document.");
+                        }
                     }
-                    else if (childNode.Name != "#comment")
-                    {
-                        Debug.LogError("Wrong node name : " + childNode.Name + " in xml document.");
-                    }
+                }
+                else if (xmlDocument.DocumentElement.Name == "event")
+                {
+                    Encounter newEncounter = new Encounter();
+                    newEncounter.Read(xmlDocument.DocumentElement);
+                    tempEncounter.Add(newEncounter);
+                }
+                else if (xmlDocument.DocumentElement.Name != "#comment")
+                {
+                    Debug.LogError("Wrong node name : " + xmlDocument.DocumentElement.Name + " in xml document.");
                 }
             }
 
