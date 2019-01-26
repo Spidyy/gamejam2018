@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Green Apple</id>
+		<text>The sight of a glowing green apple laying under a nearby tree catches your eye.</text>
+		<tier>1</tier>
+		<choice>
+			<text>Eat</text>
+			<outcome chance="50">
+				<text>Delicious! A warm glow permiates your body. You feel revitalize!</text>
+				<hunger>+5</hunger>
+				<stamina>+10</stamina>
+			</outcome>
+      <outcome chance="50">
+				<text>Upon finishing the apple, a dulling ache surges through you, turning your limbs to lead.</text>
+				<hunger>+5</hunger>
+				<stamina>-10</stamina>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Ignore</text>
+			<outcome>
+				<text>Tearing your attention from the apple, you continue on your jounrey home.</text>
+			</outcome>
+		</choice>
+	</event>

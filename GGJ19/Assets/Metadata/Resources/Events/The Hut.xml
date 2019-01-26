@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>The Hut</id>
+		<text>The potent scent of burning herbs appears to be emanating from a nearby hut. Observing the makeshift abode, it's clear that sombody lives there. "Can I help you?" a croaking voice from behind.</text>
+		<tier>1</tier>
+		<choice>
+			<text>Drink</text>
+			<outcome chance="75">
+				<text>Reaching the edge of the pool, you kneel to taste the water. Considering it safe, you drink deep, the icy cold liquid chilling you from the inside. After several mouthful you stop and inhale sharply. The effects are immediate, greatly replenishing your reserves.</text>
+				<stamina>+25</stamina>
+			</outcome>
+			<outcome chance="25">
+				<text>Meeting the edge of the pool, you kneel, tasting the water. Thinking it safe, you drink deep. You were wrong. The icy liquid freezes you from the inside, burning with cold and stealing your breath. After a few moments of desperately struggling for air, you are finally able to reliably catch you breathe. Shivering with cold, wariness sets in.</text>
+				<hp>-10</hp>
+				<stamina>-20</stamina>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Ignore</text>
+			<outcome>
+				<text>Relying on your powers of perception, you deduce that there's something...off about the pool. Exiling all thoughts of quenching thrist, you strive for home.</text>
+			</outcome>
+		</choice>
+	</event>

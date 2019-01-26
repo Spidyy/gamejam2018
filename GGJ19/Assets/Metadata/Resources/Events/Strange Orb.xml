@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Strange Orb</id>
+		<text>A bizzare blue orbs drifts down from overhead, placing itself in your path.</text>
+		<tier>1</tier>
+		<choice>
+			<text>Greet</text>
+			<outcome>
+				<text>You polietly greet the stange glow, wishing it well. The orb suddenly stops moving, increases in size and then flies away. You're unsure of what to make of that.</text>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Offer Gold</text>
+			<outcome chance="33">
+				<text>Offering out a handful of gold, the orb softly lands in your palm atop the coins. A bright light eminates from the orb, blinding you. When your vision clears, both the orb and the coins have gone, however, so have your aches and pains.</text>
+				<hp>+20</hp>
+				<gold>-10</gold>
+			</outcome>
+			<outcome chance="33">
+				<text>Offering out a handful of gold, the orb softly lands in your palm atop the coins. A bright light eminates from the orb, blinding you. When your vision clears, both the orb and the coins have gone, however, so has your hunger.</text>
+				<hunger>+20</hunger>
+				<gold>-10</gold>
+			</outcome>
+			<outcome chance="33">
+				<text>Offering out a handful of gold, the orb softly lands in your palm atop the coins. A bright light eminates from the orb, blinding you. When your vision clears, both the orb and the coins have gone, however, so has your fatigue.</text>
+				<stamina>+20</stamina>
+				<gold>-10</gold>
+			</outcome>
+		</choice>
+	</event>
