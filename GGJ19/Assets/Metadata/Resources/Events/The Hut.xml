@@ -8,7 +8,7 @@
 			<outcome chance="75">
 				<text>Stammering, you warmly address the witch. She cackles and questions as to whether you would like to come inside. Upon declincing, she blows a dusty substance in your face. The next thing you know, you're standing back on the road feeling completely drained and extremely unwell. </text>
 				<hp>-20</hp>
-				<hunger>-15<hunger>
+				<hunger>-15</hunger>
 				<stamina>-25</stamina>
 			</outcome>
 			<outcome chance="25">
