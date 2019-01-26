@@ -78,7 +78,7 @@ public class EncounterUIController : MonoBehaviour
                 m_choiceButton2Cost.gameObject.SetActive(true);
 
                 int cost = Mathf.Abs(current.Choices[1].Outcomes[0].GoldModifier);
-                if (cost > player.)
+                if (cost > player.Gold)
                 {
                     m_choiceButton2Cost.text = "This action require " + cost.ToString() + "golds.";
                     m_choiceButton2Cost.color = Color.red;
