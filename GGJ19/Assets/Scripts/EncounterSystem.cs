@@ -50,6 +50,13 @@ public class EncounterSystem : MonoBehaviour
         private set;
     }
 
+    public void DebugDrawTier()
+    {
+        int tier = RandomlySelectTier(MaxTier);
+
+        Debug.Log("Drawn tier : " + tier.ToString());
+    }
+
     public void SolveCurrentEvent()
     {
         CurrentEncounter = GetNextEncounter(mHighestTier);
@@ -69,7 +76,7 @@ public class EncounterSystem : MonoBehaviour
 
         Debug.Log(mEncounters.Length.ToString() + " encounter(s) loaded.");
 
-        CurrentEncounter = GetNextEncounter(1);
+        CurrentEncounter = GetNextEncounter(0);
     }
 
     private Encounter[] LoadData(string path)
@@ -117,20 +124,24 @@ public class EncounterSystem : MonoBehaviour
             totalChances += TierChances[tier];
         }
 
-        float[] normalizedChances = new float[maxTier];
+        float[] normalizedChances = new float[maxTier+1];
         normalizedChances[0] = TierChances[0] / totalChances;
+
+        
         for (int tier = 1; tier <= maxTier; ++tier)
         {
             normalizedChances[tier] = (TierChances[tier] / totalChances) + normalizedChances[tier - 1];
         }
 
         float random = Random.value;
-        for (int tier = maxTier; tier >= 0; --tier)
+        float previousTierChance = 0f;
+        for (int tier = 0; tier <= maxTier; ++tier)
         {
-            if(normalizedChances[tier] > random)
+            if (previousTierChance < random && random < normalizedChances[tier])
             {
                 return tier;
             }
+            previousTierChance = normalizedChances[tier];
         }
 
         // If we don't find a tier, we just throw a low one.
