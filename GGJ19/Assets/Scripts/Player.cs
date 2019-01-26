@@ -5,7 +5,7 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    public float m_speedMetresPerSecond = 0.5f;
+    public float m_speedMetresPerSecond = 1f;
 
     public bool m_moving = false;
     public float m_currentDistance = 0f;
@@ -36,12 +36,13 @@ public class Player : MonoBehaviour
     {
         m_currentDistance += Time.deltaTime * m_speedMetresPerSecond;
         m_moving = true;
+        Debug.Log(m_currentDistance);
     }
 
     public void StopAt(float distance)
     {
         m_currentDistance = distance;
-        m_moving = true;
+        m_moving = false;
     }
 
     public void AlterStat(Stat stat, int delta)

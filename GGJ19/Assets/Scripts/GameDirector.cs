@@ -13,7 +13,11 @@ public class GameDirector : MonoBehaviour
 {
     [HideInInspector]
     public Player m_player;
-    private int m_nextEventDistance;
+
+    public EncounterUIController m_encounterUI;
+    public float m_eventInterval = 5f;
+
+    private float m_nextEventDistance;
 
     private void Awake()
     {
@@ -34,13 +38,32 @@ public class GameDirector : MonoBehaviour
             if(m_player.m_currentDistance >= m_nextEventDistance)
             {
                 m_player.StopAt(m_nextEventDistance);
+
                 // trigger event
+                m_encounterUI.ShowEncounter();
             }
         }
     }
 
-    private int GenerateNextEventDistance()
+    public void OnOption1Chosen()
     {
-        return 20;
+        m_encounterUI.ShowOutcome();
+    }
+
+    public void OnOption2Chosen()
+    {
+        m_encounterUI.ShowOutcome();
+    }
+
+    public void OnOutcomeAccept()
+    {
+        m_encounterUI.Hide();
+        m_nextEventDistance = GenerateNextEventDistance();
+        m_player.Move();
+    }
+
+    private float GenerateNextEventDistance()
+    {
+        return m_nextEventDistance + m_eventInterval;
     }
 }
