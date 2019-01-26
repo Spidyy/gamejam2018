@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Bandits</id>
+		<text>A pair of desperate looking bandits rushes you from the treeline. "Hand over all ya gold, or else!"</text>
+		<tier>2</tier>
+		<choice>
+			<text>Persuade</text>
+			<outcome chance="80">
+				<text>You plead with the bandits but your appeal falls on deaf ears. Togther they advance upon you, beating you down. After failing to find any gold on your person, they leave you to broken on the road.</text>
+				<hp>-35</hp>
+			</outcome>
+			<outcome chance="20">
+				<text>You somehow manage to convince the bandits that you're not worth their time. While snorting and spitting, they mock you and go on their way.</text>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Pay</text>
+			<outcome>
+				<text>You handover a few pieces of gold. The two them of burst out laughing, pat you on the shoulder, then loudly wander off down the road.</text>
+				<gold>-15</gold>
+			</outcome>
+		</choice>
+	</event>

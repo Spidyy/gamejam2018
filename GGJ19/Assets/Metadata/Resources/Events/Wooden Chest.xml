@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Wooden Chest</id>
+		<text>A wooden chest lays half burried in a pit not far from the road. You soon find the chest is shut fast, a heavy lock fitted around its hasp.</text>
+		<tier>1</tier>
+		<choice>
+			<text>Break</text>
+			<outcome chance="50">
+				<text>You attempt to forcely break the weakest point of the chest but to no aveil.</text>
+				<stamina>-5</stamina>
+			</outcome>
+			<outcome chance="25">
+				<text>You focus all your might in a bid to break open the chest. However, it appears the chest is far sturdier than you, as a poorly launched kick badly twists an ankle upon impact. </text>
+				<hp>-10</hp>
+				<stamina>-5</stamina>
+			</outcome>
+			<outcome chance="25">
+				<text>You focus all your might in a bid to break open the chest. A perfectly honed strike causes the chest to burst open, spilling coins out onto the ground.</text>
+				<stamina>-5</stamina>
+				<gold>-10</gold>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Ignore</text>
+			<outcome>
+				<text>Breaking such a thick lock is no easy feat, nor is there guarantee the chest holds anything of use. It's best to leave it be and focus on getting home.</text>
+			</outcome>
+		</choice>
+	</event>

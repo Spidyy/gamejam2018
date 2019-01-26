@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Find Booze</id>
+		<text>A brown glass bottle slowly rolls towards you from in front. It gently knocks your shoe as it reaches you, its contents sloshing. A label reading "XXXX" hangs off the bottle.</text>
+		<tier>1</tier>
+		<choice>
+			<text>Drink</text>
+			<outcome chance="50">
+				<text>After popping the cork and sniffing at the liquid within, you decided drink from the bottle. It's beer. Strong enough to give you a bit of a buzz but not quite enough to inhibit your senses.</text>
+				<hunger>+5</hunger>
+				<stamina>+15</stamina>
+			</outcome>
+			<outcome chance="50">
+				<text>You pop the cork off the bottle and are greeted by a hopsy aroma. You drink from the seemingly safe bottle but soon enough find yourself unable to think straight. The next hour is a haze. You come to sat against a tree near the road, with only the fragments of memories of what just happened and a very sore head.</text>
+				<hp>-5</hp>
+				<hunger>+5</hunger>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Ignore</text>
+			<outcome chance="50">
+				<text>Ignoring the highly suspicious bottle, you step over it. The sight of it does bring to mind your fondness for your own homebrewed ale, however.</text>
+			</outcome>
+			<text>Ignore</text>
+			<outcome chance="50">
+				<text>You choose to ignore the suspect bottle when unexpectedly, it explodes, sending you flying through the air and slamming hard against the roadside.</text>
+				<hp>-15</hp>
+			</outcome>
+		</choice>
+	</event>
