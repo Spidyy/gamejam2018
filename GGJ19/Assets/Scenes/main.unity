@@ -960,7 +960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_encounterUI: {fileID: 1374271055}
-  encounterSystem: {fileID: 0}
+  encounterSystem: {fileID: 106466804}
   m_eventInterval: 5
 --- !u!4 &1368696867
 Transform:
@@ -1258,6 +1258,31 @@ Prefab:
     - target: {fileID: 1473006173533118, guid: 16c17916b94ac4623bf39c1f83e8c621, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114570293302496114, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnOptionChosen
+      objectReference: {fileID: 0}
+    - target: {fileID: 114570293302496114, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114774550150585944, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnOptionChosen
+      objectReference: {fileID: 0}
+    - target: {fileID: 114774550150585944, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114774550150585944, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16c17916b94ac4623bf39c1f83e8c621, type: 2}
