@@ -10,6 +10,7 @@ public class ParallaxLayer : MonoBehaviour
 {
     public int m_numTiles = 6;
     public bool m_invertAlternateTiles = false;
+    public bool m_randomlyInvertTiles = false;
     public float m_scrollSpeed;
     public string m_prefabPath;
     public float m_overlapNormalised = 0;
@@ -42,11 +43,19 @@ public class ParallaxLayer : MonoBehaviour
             float start = -0.5f * (float)(m_numTiles - 1) * width.Value;
             go.transform.localPosition = (1f / transform.localScale.x) * new Vector3(start + (width.Value * i), 0f);
 
-            if(m_invertAlternateTiles)
+            bool invert = false;
+            if(m_randomlyInvertTiles)
             {
-                float xScale = i % 2 == 0 ? 1f : -1f;
-                go.transform.localScale = new Vector2(xScale, 1f);
+                invert = (Random.Range(0,2) == 0);
+                Debug.Log(invert);
             }
+            else if(m_invertAlternateTiles)
+            {
+                invert = (i % 2 != 0);
+            }
+
+            float xScale = invert ? -1f : 1f;
+            go.transform.localScale = new Vector2(xScale, 1f);
 
             m_tiles[i] = go.AddComponent<ParallaxTile>();
             m_tiles[i].m_scrollSpeed = m_scrollSpeed;
