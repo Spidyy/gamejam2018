@@ -21,6 +21,8 @@ public class GameDirector : MonoSingleton<GameDirector>
 
     private float m_nextEventDistance;
 
+    public EncounterSystem encounterSystem;
+
     private void Awake()
     {
         m_player = FindObjectOfType<Player>();
@@ -60,22 +62,51 @@ public class GameDirector : MonoSingleton<GameDirector>
         }
     }
 
-    public void OnOption1Chosen()
+    public void OnOptionChosen(int choiceIndex)
     {
-        m_encounterUI.ShowOutcome();
-    }
-
-    public void OnOption2Chosen()
-    {
-        m_encounterUI.ShowOutcome();
+        Encounter current = encounterSystem.CurrentEncounter;
+        Encounter.Outcome outcome = current.Choices[choiceIndex].GetRandomOutcome();
+        if (outcome != null)
+        {
+            ApplyOutcome(outcome);
+            m_encounterUI.ShowOutcome(outcome);
+        }
+        else
+        {
+            m_encounterUI.Hide();
+        }
     }
 
     public void OnOutcomeAccept()
     {
+        encounterSystem.SolveCurrentEvent();
         m_encounterUI.Hide();
         m_nextEventDistance = GenerateNextEventDistance();
         m_player.Move();
         SetScrollingActive(true);
+    }
+
+    private void ApplyOutcome(Encounter.Outcome outcome)
+    {
+        if(outcome.HpModifier != 0)
+        {
+            m_player.AlterStat(Stat.HP, outcome.HpModifier);
+        }
+
+        if (outcome.StaminaModifier != 0)
+        {
+            m_player.AlterStat(Stat.STA, outcome.StaminaModifier);
+        }
+
+        if (outcome.HungerModifier != 0)
+        {
+            m_player.AlterStat(Stat.HUN, outcome.HungerModifier);
+        }
+
+        if (outcome.GoldModifier != 0)
+        {
+            m_player.AlterStat(Stat.GOLD, outcome.GoldModifier);
+        }
     }
 
     private float GenerateNextEventDistance()
