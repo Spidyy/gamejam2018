@@ -15,7 +15,7 @@
 		</choice>
 		<choice>
 			<text>Confront</text>
-			<<outcome chance="50">
+			<outcome chance="50">
 				<text>Struggling to display fierce equanimity, you nervously turn to face the noise. After a tense moment looking out into the darkness, the sense of unease subsides. You causiously resume towards home.</text>
 			</outcome>
       <outcome chance="50">

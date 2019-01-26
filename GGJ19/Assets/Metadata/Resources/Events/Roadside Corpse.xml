@@ -7,7 +7,7 @@
 			<text>Search</text>
 			<outcome chance="66">
 				<text>While only just managing to put aside extreme feelings of apprehension and disgust, you flip the bloated corpse and search it for valuables, uncovering a few coins in the process.</text>
-				<Gold>+5</Gold>
+				<gold>+5</gold>
 				<stamina>-5</stamina>
 			</outcome>
       <outcome chance="33">
