@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     public delegate void StatChangeDelegate(Stat stat, int newTotal, int delta);
     public event StatChangeDelegate OnStatChange;
 
+    public delegate void DistanceChangedDelegate(float distance);
+    public event DistanceChangedDelegate OnDistanceChanged;
+
     public void Awake()
     {
         m_currentStats = GenerateStartingStats();
@@ -40,6 +43,11 @@ public class Player : MonoBehaviour
         m_currentDistance += Time.deltaTime * m_speedMetresPerSecond;
         m_moving = true;
         Debug.Log(m_currentDistance);
+
+        if(OnDistanceChanged != null)
+        {
+            OnDistanceChanged(m_currentDistance);
+        }
     }
 
     public void StopAt(float distance)
@@ -53,7 +61,10 @@ public class Player : MonoBehaviour
         int statAsInt = (int)stat;
         m_currentStats[statAsInt] = Mathf.Clamp(m_currentStats[statAsInt] + delta, 0, StatConsts.k_maxValues[statAsInt]);
 
-        OnStatChange(stat, m_currentStats[statAsInt], delta);
+        if(OnStatChange != null)
+        {
+            OnStatChange(stat, m_currentStats[statAsInt], delta);
+        }
     }
 
     public bool IsDead()

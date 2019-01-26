@@ -17,6 +17,7 @@ public class GameDirector : MonoSingleton<GameDirector>
     public float m_eventInterval = 5f;
 
     private ScrollingObject[] m_scrollingObjects;
+    private HudUIController m_hudUIController = null;
 
     private float m_nextEventDistance;
 
@@ -30,11 +31,29 @@ public class GameDirector : MonoSingleton<GameDirector>
         m_scrollingObjects = FindObjectsOfType<ScrollingObject>();
     }
 
-    private void Start ()
+    private void Start()
     {
         m_nextEventDistance = GenerateNextEventDistance();
         m_player.Move();
         SetScrollingActive(true);
+
+        var hudControlelrs = FindObjectsOfType<HudUIController>();
+        if(hudControlelrs.Length == 0)
+        {
+            m_hudUIController = HudUIControllerFactory.CreateHudUIController();
+        }
+        else if(hudControlelrs.Length > 0)
+        {
+            m_hudUIController = hudControlelrs[0];
+
+            for(int i = 1; i < hudControlelrs.Length; ++i)
+            {
+                Destroy(hudControlelrs[i]);
+            }
+        }
+
+        Debug.Assert(m_hudUIController != null, "m_hudUIController is null");
+        m_hudUIController.Initialise();
     }
 
     private void Update ()
