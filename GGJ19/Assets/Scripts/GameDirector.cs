@@ -11,8 +11,7 @@ using TagFramework;
 //
 public class GameDirector : MonoSingleton<GameDirector>
 {
-    [HideInInspector]
-    public Player m_player;
+    private Player m_player;
 
     public EncounterUIController m_encounterUI;
     public float m_eventInterval = 5f;
@@ -21,7 +20,7 @@ public class GameDirector : MonoSingleton<GameDirector>
 
     private float m_nextEventDistance;
 
-    public EncounterSystem encounterSystem;
+    public Player Player {  get { return m_player; } }
 
     private void Awake()
     {
@@ -62,51 +61,22 @@ public class GameDirector : MonoSingleton<GameDirector>
         }
     }
 
-    public void OnOptionChosen(int choiceIndex)
+    public void OnOption1Chosen()
     {
-        Encounter current = encounterSystem.CurrentEncounter;
-        Encounter.Outcome outcome = current.Choices[choiceIndex].GetRandomOutcome();
-        if (outcome != null)
-        {
-            ApplyOutcome(outcome);
-            m_encounterUI.ShowOutcome(outcome);
-        }
-        else
-        {
-            m_encounterUI.Hide();
-        }
+        m_encounterUI.ShowOutcome();
+    }
+
+    public void OnOption2Chosen()
+    {
+        m_encounterUI.ShowOutcome();
     }
 
     public void OnOutcomeAccept()
     {
-        encounterSystem.SolveCurrentEvent();
         m_encounterUI.Hide();
         m_nextEventDistance = GenerateNextEventDistance();
         m_player.Move();
         SetScrollingActive(true);
-    }
-
-    private void ApplyOutcome(Encounter.Outcome outcome)
-    {
-        if(outcome.HpModifier != 0)
-        {
-            m_player.AlterStat(Stat.HP, outcome.HpModifier);
-        }
-
-        if (outcome.StaminaModifier != 0)
-        {
-            m_player.AlterStat(Stat.STA, outcome.StaminaModifier);
-        }
-
-        if (outcome.HungerModifier != 0)
-        {
-            m_player.AlterStat(Stat.HUN, outcome.HungerModifier);
-        }
-
-        if (outcome.GoldModifier != 0)
-        {
-            m_player.AlterStat(Stat.GOLD, outcome.GoldModifier);
-        }
     }
 
     private float GenerateNextEventDistance()
