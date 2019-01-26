@@ -9,17 +9,20 @@ using TagFramework;
 
 // runs the core loop of the game
 //
-public class GameDirector : MonoBehaviour
+public class GameDirector : MonoSingleton<GameDirector>
 {
-    [HideInInspector]
-    public Player m_player;
+    private Player m_player;
 
     public EncounterUIController m_encounterUI;
+    public EncounterSystem encounterSystem;
     public float m_eventInterval = 5f;
-
+    
     private ParallaxLayer[] m_scrollingObjects;
-
+    private HudUIController m_hudUIController = null;
+    
     private float m_nextEventDistance;
+
+    public Player Player {  get { return m_player; } }
 
     private void Awake()
     {
@@ -29,11 +32,29 @@ public class GameDirector : MonoBehaviour
         m_scrollingObjects = FindObjectsOfType<ParallaxLayer>();
     }
 
-    private void Start ()
+    private void Start()
     {
         m_nextEventDistance = GenerateNextEventDistance();
         m_player.Move();
         SetScrollingActive(true);
+
+        var hudControlelrs = FindObjectsOfType<HudUIController>();
+        if(hudControlelrs.Length == 0)
+        {
+            m_hudUIController = HudUIControllerFactory.CreateHudUIController();
+        }
+        else if(hudControlelrs.Length > 0)
+        {
+            m_hudUIController = hudControlelrs[0];
+
+            for(int i = 1; i < hudControlelrs.Length; ++i)
+            {
+                Destroy(hudControlelrs[i]);
+            }
+        }
+
+        Debug.Assert(m_hudUIController != null, "m_hudUIController is null");
+        m_hudUIController.Initialise();
     }
 
     private void Update ()
@@ -60,22 +81,51 @@ public class GameDirector : MonoBehaviour
         }
     }
 
-    public void OnOption1Chosen()
+    public void OnOptionChosen(int choice)
     {
-        m_encounterUI.ShowOutcome();
-    }
-
-    public void OnOption2Chosen()
-    {
-        m_encounterUI.ShowOutcome();
+        Encounter current = encounterSystem.CurrentEncounter;
+        Encounter.Outcome outcome = current.Choices[choice].GetRandomOutcome();
+        if (outcome != null)
+        {
+            ApplyOutcome(outcome);
+            m_encounterUI.ShowOutcome(outcome);
+        }
+        else
+        {
+            m_encounterUI.Hide();
+        }
     }
 
     public void OnOutcomeAccept()
     {
+        encounterSystem.SolveCurrentEvent();
         m_encounterUI.Hide();
         m_nextEventDistance = GenerateNextEventDistance();
         m_player.Move();
         SetScrollingActive(true);
+    }
+
+    private void ApplyOutcome(Encounter.Outcome outcome)
+    {
+        if(outcome.HpModifier != 0)
+        {
+            m_player.AlterStat(Stat.HP, outcome.HpModifier);
+        }
+
+        if (outcome.StaminaModifier != 0)
+        {
+            m_player.AlterStat(Stat.STA, outcome.StaminaModifier);
+        }
+
+        if (outcome.HungerModifier != 0)
+        {
+            m_player.AlterStat(Stat.HUN, outcome.HungerModifier);
+        }
+
+        if (outcome.GoldModifier != 0)
+        {
+            m_player.AlterStat(Stat.GOLD, outcome.GoldModifier);
+        }
     }
 
     private float GenerateNextEventDistance()

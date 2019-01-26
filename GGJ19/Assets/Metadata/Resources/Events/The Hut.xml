@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>The Hut</id>
+		<text>The potent scent of burning herbs emanates from a nearby hut. Observing the makeshift abode, it's clear that sombody is living there. "Can I help you?" a croaking voice suddenly come from behind, catching you off gaurd. Turning, you see the visage of an amused witch looming in the darkness.</text>
+		<tier>2</tier>
+		<choice>
+			<text>Greet</text>
+			<outcome chance="75">
+				<text>Stammering, you warmly address the witch. She cackles and questions as to whether you would like to come inside. Upon declincing, she blows a dusty substance in your face. The next thing you know, you're standing back on the road feeling completely drained and extremely unwell. </text>
+				<hp>-20</hp>
+				<hunger>-15</hunger>
+				<stamina>-25</stamina>
+			</outcome>
+			<outcome chance="25">
+				<text>Stammering, you warmly address the witch. She neutrally greets you back, eyeing you up and down. "Hmm...no, you're no good. Go on, be off with you" dismissively calls after a moment, waddling off into her hut. No good for what you wonder?</text>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Apologise</text>
+			<outcome>
+				<text>Unsure of how to react, you apologise for skulking. The witch nods and begins walking towards you. As she closes in, she lays a hand on you and for a moment, you feel slightly dizzy. Once your head clears the realise the witch and hut are nowhere to be seen. </text>
+				<stamina>-5</stamina>
+			</outcome>
+		</choice>
+	</event>

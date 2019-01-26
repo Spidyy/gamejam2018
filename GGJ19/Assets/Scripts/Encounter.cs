@@ -27,11 +27,17 @@ public class Encounter
         public string Text;
         public string CloseText;
         public int Chance;
-        public KeyValuePair<Stat, int>[] StatChanges;
+        public int HpModifier;
+        public int StaminaModifier;
+        public int HungerModifier;
+        public int GoldModifier;
 
         public void Read(XmlNode iOutcomeNode, string id)
         {
-            List<KeyValuePair<Stat, int>>  tempStatChanges = new List<KeyValuePair<Stat, int>>();
+            HpModifier = 0;
+            StaminaModifier = 0;
+            HungerModifier = 0;
+            GoldModifier = 0;
 
             foreach(XmlNode childNode in iOutcomeNode)
             {
@@ -45,19 +51,19 @@ public class Encounter
                 }
                 else if(childNode.Name == "hp")
                 {
-                    tempStatChanges.Add(new KeyValuePair<Stat, int>(Stat.HP, int.Parse(childNode.InnerText)));
+                    HpModifier += int.Parse(childNode.InnerText);
                 }
                 else if (childNode.Name == "stamina")
                 {
-                    tempStatChanges.Add(new KeyValuePair<Stat, int>(Stat.STA, int.Parse(childNode.InnerText)));
+                    StaminaModifier += int.Parse(childNode.InnerText);
                 }
                 else if (childNode.Name == "hunger")
                 {
-                    tempStatChanges.Add(new KeyValuePair<Stat, int>(Stat.HUN, int.Parse(childNode.InnerText)));
+                    HungerModifier += int.Parse(childNode.InnerText);
                 }
                 else if (childNode.Name == "gold")
                 {
-                    tempStatChanges.Add(new KeyValuePair<Stat, int>(Stat.GOLD, int.Parse(childNode.InnerText)));
+                    GoldModifier += int.Parse(childNode.InnerText);
                 }
                 else if (childNode.Name != "#comment")
                 {
@@ -71,11 +77,6 @@ public class Encounter
                 {
                     Chance = int.Parse(attribute.InnerText);
                 }
-            }
-
-            if(tempStatChanges.Count > 0)
-            {
-                StatChanges = tempStatChanges.ToArray();
             }
         }
     }
@@ -128,6 +129,43 @@ public class Encounter
                 TotalOutcomeChances += outcome.Chance;
             }
         }
+
+        public Outcome GetRandomOutcome()
+        {
+            if(Outcomes.Length == 1)
+            {
+                return Outcomes[0];
+            }
+            else if (Outcomes.Length > 1)
+            {
+                float[] normalizedOutcomeChances = new float[Outcomes.Length];
+                normalizedOutcomeChances[0] = (Outcomes[0].Chance / TotalOutcomeChances);
+                for (int index = 1; index < Outcomes.Length; ++index)
+                {
+                    normalizedOutcomeChances[index] = (Outcomes[index].Chance / TotalOutcomeChances) + normalizedOutcomeChances[index - 1];
+                }
+
+                float random = Random.value;
+                float previousOutcomeChance = 0f;
+                for (int index = 0; index < Outcomes.Length; ++index)
+                {
+                    if (previousOutcomeChance < random && random < normalizedOutcomeChances[index])
+                    {
+                        Debug.Log(string.Format("Multiple outcomes, selected outcome {0}({1})", index, random));
+                        return Outcomes[index];
+                    }
+                    previousOutcomeChance = normalizedOutcomeChances[index];
+                }
+
+                // Couldn't get an outcome from the random value, default to the first one.
+                return Outcomes[0];
+            }
+            else
+            {
+                Debug.Log("No outcome, nothing to do.");
+                return null;
+            }
+        }
     }
 
     public string Id;
@@ -148,7 +186,7 @@ public class Encounter
             {
                 Id = childNode.InnerText;
             }
-            if (childNode.Name == "text")
+            else if (childNode.Name == "text")
             {
                 Text = childNode.InnerText;
             }
@@ -198,13 +236,21 @@ public class Encounter
                 {
                     iWriter.WriteStartElement("outcome");
                     iWriter.WriteElementString("text", outcome.Text);
-
-                    if (outcome.StatChanges != null)
+                    if (outcome.HpModifier != 0)
                     {
-                        foreach(KeyValuePair<Stat, int> statChange in outcome.StatChanges)
-                        {
-                            iWriter.WriteElementString(sStatToString[statChange.Key], statChange.Value.ToString());
-                        }
+                        iWriter.WriteElementString("hp", outcome.HpModifier.ToString());
+                    }
+                    if (outcome.StaminaModifier != 0)
+                    {
+                        iWriter.WriteElementString("stamina", outcome.StaminaModifier.ToString());
+                    }
+                    if (outcome.HungerModifier != 0)
+                    {
+                        iWriter.WriteElementString("hunger", outcome.HungerModifier.ToString());
+                    }
+                    if (outcome.GoldModifier != 0)
+                    {
+                        iWriter.WriteElementString("gold", outcome.GoldModifier.ToString());
                     }
                     iWriter.WriteEndElement();
                 }

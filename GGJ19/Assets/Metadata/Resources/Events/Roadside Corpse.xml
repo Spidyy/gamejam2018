@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Roadside Corpse</id>
+		<text>You spot a pile of clothes at the side of the road up ahead. As you near, to your horror, you suddenly realise that it is in fact a weeks-old corpse laying face-down in the ditch.</text>
+		<tier>1</tier>
+		<choice>
+			<text>Search</text>
+			<outcome chance="66">
+				<text>While only just managing to put aside extreme feelings of apprehension and disgust, you flip the bloated corpse and search it for valuables, uncovering a few coins in the process.</text>
+				<gold>+5</gold>
+				<stamina>-5</stamina>
+			</outcome>
+      <outcome chance="33">
+				<text>While flipping over the body to search it easier, the badly decomposed corpse jerks upwards, quickly clamping its ragged teeth down on to your arm before releasing and falling back into the ditch. As you stumble backwards, you swear that you can hear mocking laughter coming from the direction of the corpse.</text>
+				<hp>-15</hp>
+				<stamina>-5</stamina>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Ignore</text>
+			<outcome>
+				<text>Erring very much on the side of caution, you steer away from the ditch as you walk past. From behind, you catch what you think was the sound of a strained groan. You tell yourself it was the wind...</text>
+			</outcome>
+		</choice>
+	</event>
