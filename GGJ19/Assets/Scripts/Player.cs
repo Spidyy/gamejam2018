@@ -71,6 +71,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    // Return the stat value
+    //
+    public int CurrentStatValue(Stat stat)
+    {
+        return m_currentStats[(int)stat];
+    }
+
     public bool IsDead()
     {
         return m_currentStats[(int)Stat.HP] <= 0 || m_currentStats[(int)Stat.STA] <= 0 || m_currentStats[(int)Stat.HUN] <= 0 ;
