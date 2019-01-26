@@ -87,6 +87,7 @@ public class GameDirector : MonoSingleton<GameDirector>
         Encounter.Outcome outcome = current.Choices[choice].GetRandomOutcome();
         if (outcome != null)
         {
+            ApplyOutcome(outcome);
             m_encounterUI.ShowOutcome(outcome);
         }
         else
@@ -102,6 +103,29 @@ public class GameDirector : MonoSingleton<GameDirector>
         m_nextEventDistance = GenerateNextEventDistance();
         m_player.Move();
         SetScrollingActive(true);
+    }
+
+    private void ApplyOutcome(Encounter.Outcome outcome)
+    {
+        if(outcome.HpModifier != 0)
+        {
+            m_player.AlterStat(Stat.HP, outcome.HpModifier);
+        }
+
+        if (outcome.StaminaModifier != 0)
+        {
+            m_player.AlterStat(Stat.STA, outcome.StaminaModifier);
+        }
+
+        if (outcome.HungerModifier != 0)
+        {
+            m_player.AlterStat(Stat.HUN, outcome.HungerModifier);
+        }
+
+        if (outcome.GoldModifier != 0)
+        {
+            m_player.AlterStat(Stat.GOLD, outcome.GoldModifier);
+        }
     }
 
     private float GenerateNextEventDistance()
