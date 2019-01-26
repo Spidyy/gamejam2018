@@ -10,16 +10,18 @@
 			"OptionA":
 			{
 				"ButtonText":"Attack",
-				"OutcomeStats": ["HP,STA,HUN"],
-				"StatsDelta": [-5, -2, 8],
+				"OutcomeText":"You are wounded in the fight",
+				"OutcomeStats": ["HP"],
+				"StatsDelta": [ -5 ],
 				"OutcomesShown": true
 			},
 			
 			"OptionB":
 			{
 				"ButtonText":"Run",
-				"OutcomeStats": ["GOLD"],
-				"StatsDelta": [ 5 ],
+				"OutcomeText":"You escape, but not without a chase",
+				"OutcomeStats": ["STA"],
+				"StatsDelta": [ -5 ],
 				"OutcomesShown": false
 			}
 		},
@@ -31,14 +33,16 @@
 			"OptionA":
 			{
 				"ButtonText":"Trade",
-				"OutcomeStats": ["HUN"],
-				"StatsDelta": [ 8 ],
+				"OutcomeText":"You buy some food from the merchant",
+				"OutcomeStats": ["GOLD, HUN"],
+				"StatsDelta": [ -5, 8 ],
 				"OutcomesShown": true
 			},
 			
 			"OptionB":
 			{
 				"ButtonText":"Ignore",
+				"OutcomeText":"You avoid the merchant and carry on your way",
 				"OutcomeStats": [],
 				"StatsDelta": [],
 				"OutcomesShown": false
