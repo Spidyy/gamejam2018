@@ -1,0 +1,49 @@
+
+
+{
+	"Events":
+	[
+		{
+			"Title":"Zombie Attack",
+			"Description":"You are attacked by a zombie and some placeholder text is displayed",
+			"Tier":3,
+			"OptionA":
+			{
+				"ButtonText":"Attack",
+				"OutcomeStats": ["HP,STA,HUN"],
+				"StatsDelta": [-5, -2, 8],
+				"OutcomesShown": true
+			},
+			
+			"OptionB":
+			{
+				"ButtonText":"Run",
+				"OutcomeStats": ["GOLD"],
+				"StatsDelta": [ 5 ],
+				"OutcomesShown": false
+			}
+		},
+
+		{
+			"Title":"Merchant Encountered",
+			"Description":"You encounter a merchant and some placeholder text is displayed",
+			"Tier":1,
+			"OptionA":
+			{
+				"ButtonText":"Trade",
+				"OutcomeStats": ["HUN"],
+				"StatsDelta": [ 8 ],
+				"OutcomesShown": true
+			},
+			
+			"OptionB":
+			{
+				"ButtonText":"Ignore",
+				"OutcomeStats": [],
+				"StatsDelta": [],
+				"OutcomesShown": false
+			}
+		}
+
+	]
+}
