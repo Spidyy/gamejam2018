@@ -7,7 +7,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 	private static T s_instance = null;
     private static bool s_appExiting = false;
 
-    public T Instance
+    public static T Instance
 	{
 		get 
 		{
@@ -49,7 +49,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
     /// Find and mitigate multiple instances of the same singleton behavour 
     ///
-    private void FindInstance()
+    private static void FindInstance()
 	{
 		T[] instances = GameObject.FindObjectsOfType<T>();
 

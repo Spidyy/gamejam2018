@@ -1,0 +1,66 @@
+version: 2
+importPivots: 1
+tpsheetFileNames:
+- Assets/Art/Assistants/Seeker/Seeker.tpsheet
+- Assets/Art/Atlases/Loading.tpsheet
+- Assets/Art/Atlases/UI.tpsheet
+- Assets/Art/Hotel/HotelCrossSection.tpsheet
+- Assets/Art/Hotel/HotelDecoration.tpsheet
+- Assets/Art/Hotel/HotelDecoration_01.tpsheet
+- Assets/Art/Hotel/HotelDecoration_Special.tpsheet
+- Assets/Art/Hotel/HotelEnvironment.tpsheet
+- Assets/Art/Splash/LoadingIcons/Loading.tpsheet
+- Assets/Art/UI/CharactersUI.tpsheet
+- Assets/Art/UI/LevelSelect/ZonesIllustrations.tpsheet
+- Assets/Art/UI/LevelUI.tpsheet
+- Assets/Art/UI/Lootbox.tpsheet
+- Assets/Art/UI/Panels.tpsheet
+- Assets/Art/UI/Store.tpsheet
+- Assets/Art/UI/UI.tpsheet
+- Assets/Art/UI/ZonesIllustrations.tpsheet
+- Assets/Art/VFX/DeathCloud/DeathCloud.tpsheet
+- Assets/Resources/Atlases/Obstacles/Obstacles.tpsheet
+- Assets/Resources/Atlases/Platforms/Platforms.tpsheet
+textureFileNames:
+- Assets/Art/Assistants/Seeker/Seeker.png
+- Assets/Art/Atlases/Loading.png
+- Assets/Art/Atlases/UI.png
+- Assets/Art/Hotel/HotelCrossSection.png
+- Assets/Art/Hotel/HotelDecoration.png
+- Assets/Art/Hotel/HotelDecoration_01.png
+- Assets/Art/Hotel/HotelDecoration_Special.png
+- Assets/Art/Hotel/HotelEnvironment.png
+- Assets/Art/Splash/LoadingIcons/Loading.png
+- Assets/Art/UI/CharactersUI.png
+- Assets/Art/UI/LevelSelect/ZonesIllustrations.png
+- Assets/Art/UI/LevelUI.png
+- Assets/Art/UI/Lootbox.png
+- Assets/Art/UI/Panels.png
+- Assets/Art/UI/Store.png
+- Assets/Art/UI/UI.png
+- Assets/Art/UI/ZonesIllustrations.png
+- Assets/Art/VFX/DeathCloud/DeathCloud.png
+- Assets/Resources/Atlases/Obstacles/Obstacles.png
+- Assets/Resources/Atlases/Platforms/Platforms.png
+normalmapFileNames:
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+enableDebugOutput: 0
