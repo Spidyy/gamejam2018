@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Tombstones</id>
+		<text>You appraoch an odd tombstone that's been placed right in the middle of the road.</text>
+		<tier>2</tier>
+		<choice>
+			<text>Read</text>
+			<outcome chance="50">
+				<text>Reading the tombstone reveals it belongs to a beloved horse that was killed on this very spot. While peculiar, you think nothing more of it and move towards home.</text>
+			</outcome>
+			<outcome chance="50">
+				<text>The tombstone informs of a much loved horse that died right where you stand. Learning of this, you to look down at the ground. As you begin to look back up, the tombstone tips over, crushing and pinning you underneath it. It takes great effort to fight through the pain and summon the strength needed force the large slab off you.</text>
+				<hp>-20</hp>
+				<stamina>-10</stamina>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Avoid</text>
+			<outcome chance="50">
+				<text>Walking around the large tombstone feels like the best course of action, and as nothing untoward came of it, was probably the right thing to do.</text>
+			</outcome>
+			<outcome chance="50">
+				<text>While attempt to veer around the gaint tombstone, you fail to see or even hear a bolting horse hurtling into you. The collision is immense, knocking you a number few feet. Dazed and in serious pain, you look around but fail to see any sign that there ever any a horse...  </text>
+				<hp>-25</hp>
+			</outcome>
+		</choice>
+	</event>
