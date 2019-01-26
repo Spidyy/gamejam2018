@@ -4,21 +4,19 @@
 		<text>You are attacked by a zombie and some placeholder text is displayed</text>
 		<!-- Optional, Default to 1 -->
 		<tier>3</tier>
-		<!-- Optional, will close the event and keep going -->
-		<close>You ignore them, strolling away</close>
 		<choice>
 			<!-- Text displayed on the button -->
 			<text>Have at thee !</text>
-			<!-- At least one outcome for a choice, else use the <close> markup. The "chance" attribute is optional for only one outcome.-->
+			<!-- Optional, a choice without outcome will simply close the event message. The "chance" attribute is optional with only one outcome.-->
 			<outcome chance="40">
 				<text>Urgh ! I took damage ! And I lost some money in the moment !</text>
 				<!-- Stats are optional -->
 				<hp>-5</hp>
-				<stamina>-10<stamina>
+				<stamina>-10</stamina>
 				<gold>-2</gold>
-			</outcome change="60">
+			</outcome>
 			<!-- With multiple outcome, only one will be took in random -->
-			<outcome>
+      <outcome chance="60">
 				<text>Ha ! Easy peasy, no problem at all.</text>
 				<stamina>-3</stamina>
 				<goodmood/>
