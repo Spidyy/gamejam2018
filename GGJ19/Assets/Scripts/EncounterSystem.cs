@@ -36,6 +36,7 @@ public class EncounterSystem : MonoBehaviour
     [SerializeField]
     private List<int>[] mFreeIndicePerTier = new List<int>[3];
 
+    [SerializeField]
     private int mHighestTier = 0;
 
     public int HighestTier
@@ -168,15 +169,19 @@ public class EncounterSystem : MonoBehaviour
         int selectedTier = RandomlySelectTier(maxTier);
         List<int> selectedTierList = mFreeIndicePerTier[selectedTier];
 
+        Debug.Log("selected tier : " + selectedTier);
+
         // If we used up all our encounter for this tier, refresh it.
         if(selectedTierList.Count == 0)
         {
+            Debug.Log("Refreshing list of tier : " + selectedTier);
             selectedTierList = RefreshTierIndice(selectedTier);
         }
 
         // Select event from tier
         int encounterIndicesIndex = Random.Range(0, selectedTierList.Count);
 
+        Debug.Log("Selected tier list size : " + selectedTierList.Count.ToString() + ", encounter Indices Index : " + encounterIndicesIndex.ToString());
         int encounterIndex = selectedTierList[encounterIndicesIndex];
         selectedTierList.RemoveAt(encounterIndicesIndex);
 
@@ -198,7 +203,7 @@ public class EncounterSystem : MonoBehaviour
         for (int index = 0; index < mEncounters.Length; ++index)
         {
             Encounter encounter = mEncounters[index];
-            if (encounter.Tier == iTier)
+            if (encounter.Tier == (iTier+1))
             {
                 mFreeIndicePerTier[iTier].Add(index);
             }
