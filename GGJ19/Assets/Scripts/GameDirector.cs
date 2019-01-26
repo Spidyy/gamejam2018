@@ -16,10 +16,10 @@ public class GameDirector : MonoSingleton<GameDirector>
     public EncounterUIController m_encounterUI;
     public EncounterSystem encounterSystem;
     public float m_eventInterval = 5f;
-
-    private ScrollingObject[] m_scrollingObjects;
+    
+    private ParallaxLayer[] m_scrollingObjects;
     private HudUIController m_hudUIController = null;
-
+    
     private float m_nextEventDistance;
 
     public Player Player {  get { return m_player; } }
@@ -29,7 +29,7 @@ public class GameDirector : MonoSingleton<GameDirector>
         m_player = FindObjectOfType<Player>();
         LogUtils.Assert(m_player != null, "Player is null");
 
-        m_scrollingObjects = FindObjectsOfType<ScrollingObject>();
+        m_scrollingObjects = FindObjectsOfType<ParallaxLayer>();
     }
 
     private void Start()
