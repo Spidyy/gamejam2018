@@ -16,6 +16,11 @@ public class Player : MonoBehaviour
     public delegate void StatChangeDelegate(Stat stat, int newTotal, int delta);
     public event StatChangeDelegate OnStatChange;
 
+    public int Gold
+    {
+        get { return m_currentStats[(int)Stat.GOLD]; }
+    }
+
     public delegate void DistanceChangedDelegate(float distance);
     public event DistanceChangedDelegate OnDistanceChanged;
 

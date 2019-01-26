@@ -14,6 +14,7 @@ public class GameDirector : MonoSingleton<GameDirector>
     private Player m_player;
 
     public EncounterUIController m_encounterUI;
+    public EncounterSystem encounterSystem;
     public float m_eventInterval = 5f;
 
     private ScrollingObject[] m_scrollingObjects;
@@ -80,18 +81,23 @@ public class GameDirector : MonoSingleton<GameDirector>
         }
     }
 
-    public void OnOption1Chosen()
+    public void OnOptionChosen(int choice)
     {
-        m_encounterUI.ShowOutcome();
-    }
-
-    public void OnOption2Chosen()
-    {
-        m_encounterUI.ShowOutcome();
+        Encounter current = encounterSystem.CurrentEncounter;
+        Encounter.Outcome outcome = current.Choices[choice].GetRandomOutcome();
+        if (outcome != null)
+        {
+            m_encounterUI.ShowOutcome(outcome);
+        }
+        else
+        {
+            m_encounterUI.Hide();
+        }
     }
 
     public void OnOutcomeAccept()
     {
+        encounterSystem.SolveCurrentEvent();
         m_encounterUI.Hide();
         m_nextEventDistance = GenerateNextEventDistance();
         m_player.Move();
