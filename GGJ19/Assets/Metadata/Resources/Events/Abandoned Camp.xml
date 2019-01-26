@@ -19,10 +19,13 @@
 				<text>After navigating through the treeline, an eerie silence falls as you reach the campsite. While nearing one of the tents, a mottled hand bursts out from the ground underfoot, raking at your leg. Groans and shifting earth can suddnely be heard all around. Quickly, you flee from the campsite, tripping over another grasping hand on your way out.</text>
 				<hp>-15</hp>
 				<stamina>-15</stamina>
+			</outcome>
 		</choice>
 		<choice>
 			<text>Ignore</text>
 			<outcome chance="80">
+				<text>Turning away from the embers, you decide to stay on the path leading home.</text>
+			</outcome>
 			<outcome chance="20">
 				<text>When trying to turn your vision away from the embers, it appears that you cannot. Transfixed, you find yourself moving through the trees towards the now blazing bonfire, alluring azure beckoning you closer. Unable to resist, you step into unworldly flame. Your will instantly snaps back into your possession as intense searing pain wracks your body. The fire immediately extinguishes, abandoning you in pain and darkness. </text>
 				<hp>-25</hp>
