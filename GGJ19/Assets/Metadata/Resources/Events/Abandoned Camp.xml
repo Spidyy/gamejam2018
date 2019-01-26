@@ -25,6 +25,7 @@
 			<text>Ignore</text>
 			<outcome chance="80">
 				<text>Turning away from the embers, you decide to stay on the path leading home.</text>
+			</outcome>
 			<outcome chance="20">
 				<text>When trying to turn your vision away from the embers, it appears that you cannot. Transfixed, you find yourself moving through the trees towards the now blazing bonfire, alluring azure beckoning you closer. Unable to resist, you step into unworldly flame. Your will instantly snaps back into your possession as intense searing pain wracks your body. The fire immediately extinguishes, abandoning you in pain and darkness. </text>
 				<hp>-25</hp>
