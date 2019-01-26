@@ -11,8 +11,7 @@ using TagFramework;
 //
 public class GameDirector : MonoSingleton<GameDirector>
 {
-    [HideInInspector]
-    public Player m_player;
+    private Player m_player;
 
     public EncounterUIController m_encounterUI;
     public float m_eventInterval = 5f;
@@ -20,6 +19,8 @@ public class GameDirector : MonoSingleton<GameDirector>
     private ScrollingObject[] m_scrollingObjects;
 
     private float m_nextEventDistance;
+
+    public Player Player {  get { return m_player; } }
 
     private void Awake()
     {

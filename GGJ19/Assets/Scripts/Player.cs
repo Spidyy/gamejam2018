@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     private int[] m_currentStats;
     private Animator m_animator;
 
+    public delegate void StatChangeDelegate(Stat stat, int newTotal, int delta);
+    public event StatChangeDelegate OnStatChange;
+
     public void Awake()
     {
         m_currentStats = GenerateStartingStats();
@@ -47,7 +50,10 @@ public class Player : MonoBehaviour
 
     public void AlterStat(Stat stat, int delta)
     {
-        m_currentStats[(int)stat] = Mathf.Clamp(m_currentStats[(int)stat] + delta, 0, StatConsts.k_maxValues[(int)stat]);
+        int statAsInt = (int)stat;
+        m_currentStats[statAsInt] = Mathf.Clamp(m_currentStats[statAsInt] + delta, 0, StatConsts.k_maxValues[statAsInt]);
+
+        OnStatChange(stat, m_currentStats[statAsInt], delta);
     }
 
     public bool IsDead()
