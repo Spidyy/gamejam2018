@@ -23,6 +23,7 @@ public class EncounterUIController : MonoBehaviour
     public Player player;
 
     public GameObject FloatingTextPrefab;
+    public RectTransform FloatingTextSpawnTransform;
 
     private void Start ()
     {
@@ -139,6 +140,10 @@ public class EncounterUIController : MonoBehaviour
     public void AddFloatingText(Stat stat, int modifier, float delay)
     {
         GameObject floatingTextObject = Instantiate(FloatingTextPrefab, transform.parent);
+
+        RectTransform floatingTextTransform = floatingTextObject.GetComponent<RectTransform>();
+        floatingTextTransform.anchoredPosition = FloatingTextSpawnTransform.anchoredPosition;
+
         FloatingText floatingText = floatingTextObject.GetComponent<FloatingText>();
         floatingText.Delay = delay;
         floatingText.Color = (modifier < 0) ? Color.red : Color.white;
