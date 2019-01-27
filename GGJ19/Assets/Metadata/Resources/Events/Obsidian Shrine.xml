@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Obsidian Shrine</id>
+		<text>At the edge of the road sits an obsidian shrine, depicting the image of a horned bird. </text>
+		<tier>1</tier>
+		<choice>
+			<text>Pray</text>
+			<outcome chance="75">
+				<text>You close your eyes in front of the shrine and pray that you make it home in one piece. Upon giving yourself your sight back, you see that the eyes of the horned bird are glowing red. A sharp, deep pain burst through your chest as visions of your home set ablaze race through your mind.</text>
+				<hp>-20</hp>
+				<stamina>-10</stamina>
+			</outcome>
+			<outcome chance="25">
+				<text>The ominous shrine is a strange thing to pray upon, but these are dark times. While praying for the strength to make it back home, you hear the shrine whisper to you. "I will grant you the strength you desire, mortal".</text>
+				<hp>+20</hp>
+				<hunger>-10</hunger>
+				<stamina>+20</stamina>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Ignore</text>
+			<outcome chance="50">
+				<text>Casting aside all thought centring around the use of the shrine, you sheepishly walk away from it and go about your journey.</text>
+			</outcome>
+			<outcome chance="50">
+				<text>Leaving the shrine be, you go to walk away but are held in place by an invisible force. Taunting laughter booms from the shrine. "Foolish mortal. You must know your place in this world". With the last word uttered, you feel life itself draining out of your body, leaving you a feeble heap on the ground for a few moments.</text>
+			</outcome>
+		</choice>
+	</event>

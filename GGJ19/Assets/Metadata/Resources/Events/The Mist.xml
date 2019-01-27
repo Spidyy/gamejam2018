@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>The Mist</id>
+		<text>Movement in the corner of your eye prompts you to swiftly turn to face it. Nothing. You continue along the path home when more movement, this time on the opposite side of the road, is clearly seen.</text>
+		<tier>1</tier>
+		<choice>
+			<text>Call</text>
+			<outcome>
+				<text>You call out to whatever is it dashing through the treeline but to no response. As you open your mouth to call one final time, a black mist bursts from behind a tree and rushes you at a blistering pace, funneling itself into your month and down your thoat. Coughing up blood, you start to feel a great hunger overwhelm you.</text>
+				<hp>-10</hp>
+				<hunger>-15</hunger>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Ignore</text>
+			<outcome chance="50">
+				<text>Keeping an eye out for more movement, you proceed to walk again. Almost without realising it, you witness a black mist crawling rapidly towards you from the treeline. You managed to outrun it but only while sprinting as hard as possible.</text>
+				<stamina>-10</stamina>
+			</outcome>
+			<outcome chance="50">
+				<text>Passing the movement off as just a figment of your imagination, you hastily walk onwards, keeping your eyes on the road but your ears on high alert.</text>
+			</outcome>
+		</choice>
+	</event>

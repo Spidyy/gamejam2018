@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Net Trap</id>
+		<text>A large patch of thick mud covers the path. Stepping around it, you trigger a trap. The corners of a net raise up around you, ensnaring you within it and hoisting you off the ground.</text>
+		<tier>1</tier>
+		<choice>
+			<text>Swing</text>
+			<outcome>
+				<text>By timing the shifting of your body weight, you manage to get the net to swing pendulously. This causes the suspending branch to snap, dropping you down to the ground with the heavy thud. It's a small price for freedom.</text>
+				<hp>-10</hp>
+				<stamina>-5</stamina>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Shout</text>
+			<outcome chance="75">
+				<text>You shout for help, hoping somebody nearby can release you. The yell disturbs an angry flock of ravens. They decend upon you, pecking furiously. After they've made you aware of their disapproval, you notice they damaged the net enough for you to climb out of.</text>
+				<hp>-20</hp>
+			</outcome>
+			<outcome chance="25">
+				<text>Your yell attracts the attention of a small, toothy creature. After seeing that you're in need, it happily climbs the tree and lowers itself on to the net, chewing at a number of the links preventing your escape. Once free, you turn to thank the creature. It grins and scampers away.</text>
+			</outcome>
+		</choice>
+	</event>
