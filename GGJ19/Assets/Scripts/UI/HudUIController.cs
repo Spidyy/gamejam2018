@@ -58,9 +58,7 @@ public class HudUIController : MonoBehaviour
     /// 
     private void OnDistanceChanged(float distance)
     {
-        //--TODO: Get the correct home percentage
-        float homeProgress = m_player.m_currentDistance / 100.0f;
-        m_homeBarSlider.value = Mathf.Clamp01(homeProgress);
+        m_homeBarSlider.value = m_player.GetProgressToHome();
     }
 
     // Update the relevate stat tracking object 

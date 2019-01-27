@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public bool m_moving = false;
     public float m_currentDistance = 0f;
 
+    private float m_homeDistance;
+
     private float m_prevStaminaDecementDistance = 0.0f;
     private float m_prevHungerDecementDistance = 0.0f;
     private int[] m_currentStats;
@@ -40,6 +42,8 @@ public class Player : MonoBehaviour
         m_prevHungerDecementDistance =
             m_prevStaminaDecementDistance = 
             m_currentDistance = 0.0f;
+
+        SetDistanceToHome(StatConsts.k_startHomeDistance);
 
         OnStatChange += OnStatChangeInternal;
     }
@@ -75,6 +79,20 @@ public class Player : MonoBehaviour
         {
             OnDistanceChanged(m_currentDistance);
         }
+    }
+
+    // Set new distance until home
+    //
+    public void SetDistanceToHome(float distance)
+    {
+        m_homeDistance = distance;
+    }
+
+    // Normalized progress to 
+    //
+    public float GetProgressToHome()
+    {
+        return Mathf.Clamp01(m_currentDistance / m_homeDistance);
     }
 
     // Handle the reduction in stats as the player moves
