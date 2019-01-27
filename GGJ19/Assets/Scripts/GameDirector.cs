@@ -11,6 +11,13 @@ using TagFramework;
 //
 public class GameDirector : MonoSingleton<GameDirector>
 {
+    public enum State
+    {
+        Intro,
+        FadeOut,
+        PlayThrough
+    }
+
     public float m_minEventInterval = 3f;
     public float m_maxEventInterval = 7f;
 
@@ -19,7 +26,8 @@ public class GameDirector : MonoSingleton<GameDirector>
 
     public EncounterUIController m_encounterUI;
     public EncounterSystem encounterSystem;
-    
+    public Animator introScreenAnimator;
+
     private ParallaxLayer[] m_scrollingObjects;
     private HudUIController m_hudUIController = null;
     
@@ -29,6 +37,8 @@ public class GameDirector : MonoSingleton<GameDirector>
 
     public Player Player {  get { return m_player; } }
 
+    public State m_state = State.Intro;
+
     private void Awake()
     {
         m_player = FindObjectOfType<Player>();
@@ -37,24 +47,21 @@ public class GameDirector : MonoSingleton<GameDirector>
         m_scrollingObjects = FindObjectsOfType<ParallaxLayer>();
     }
 
+
     private void Start()
     {
-        m_nextEventDistance = GenerateNextEventDistance();
-        m_player.Move();
-        SetScrollingActive(true);
-
-        var hudControlelrs = FindObjectsOfType<HudUIController>();
-        if(hudControlelrs.Length == 0)
+        var hudControllers = FindObjectsOfType<HudUIController>();
+        if(hudControllers.Length == 0)
         {
             m_hudUIController = HudUIControllerFactory.CreateHudUIController();
         }
-        else if(hudControlelrs.Length > 0)
+        else if(hudControllers.Length > 0)
         {
-            m_hudUIController = hudControlelrs[0];
+            m_hudUIController = hudControllers[0];
 
-            for(int i = 1; i < hudControlelrs.Length; ++i)
+            for(int i = 1; i < hudControllers.Length; ++i)
             {
-                Destroy(hudControlelrs[i]);
+                Destroy(hudControllers[i]);
             }
         }
 
@@ -62,18 +69,37 @@ public class GameDirector : MonoSingleton<GameDirector>
         m_hudUIController.Initialise();
     }
 
-    private void Update ()
+    public void BeginPlaythrough()
     {
-        if(m_player.m_currentDistance < m_nextEventDistance)
-        {
-            m_player.Move();
-            if(m_player.m_currentDistance >= m_nextEventDistance)
-            {
-                m_player.StopAt(m_nextEventDistance);
-                SetScrollingActive(false);
+        m_state = State.PlayThrough;
+        m_nextEventDistance = GenerateNextEventDistance();
+        m_player.Move();
+        SetScrollingActive(true);
+    }
 
-                // trigger event
-                m_encounterUI.ShowEncounter();
+    private void Update()
+    {
+        if(m_state == State.Intro)
+        {
+            if (Input.anyKeyDown)
+            {
+                introScreenAnimator.SetTrigger("FadeOut");
+                m_state = State.FadeOut;
+            }
+        }
+        else if(m_state == State.PlayThrough)
+        {
+            if (m_player.m_currentDistance < m_nextEventDistance)
+            {
+                m_player.Move();
+                if (m_player.m_currentDistance >= m_nextEventDistance)
+                {
+                    m_player.StopAt(m_nextEventDistance);
+                    SetScrollingActive(false);
+
+                    // trigger event
+                    m_encounterUI.ShowEncounter();
+                }
             }
         }
     }
