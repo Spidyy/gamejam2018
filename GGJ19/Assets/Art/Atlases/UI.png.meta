@@ -13,6 +13,14 @@ TextureImporter:
     21300012: ProgressBarFillStamina
     21300014: ProgressBarOverlay
     21300016: StaminaIcon
+    21300018: CoinIcon
+    21300020: HeadIcon
+    21300022: HomeBarOverlaySegment
+    21300024: HouseIcon
+    21300026: ProgressBarBackingHomeEnd
+    21300028: ProgressBarBackingHomeMid
+    21300030: ProgressBarFillCoin
+    21300032: ProgressBarFillHome
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -71,6 +79,32 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: CoinIcon
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 551
+        width: 90
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: HeadIcon
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 138
+        width: 142
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
       name: HealthIcon
       rect:
         serializedVersion: 2
@@ -84,11 +118,37 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
+      name: HomeBarOverlaySegment
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 796
+        width: 80
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: HouseIcon
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 374
+        width: 132
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
       name: HungerIcon
       rect:
         serializedVersion: 2
-        x: 1
-        y: 442
+        x: 173
+        y: 65
         width: 101
         height: 110
       alignment: 0
@@ -100,8 +160,8 @@ TextureImporter:
       name: IconBacking
       rect:
         serializedVersion: 2
-        x: 330
-        y: 506
+        x: 145
+        y: 177
         width: 135
         height: 136
       alignment: 0
@@ -123,6 +183,45 @@ TextureImporter:
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
+      name: ProgressBarBackingHomeEnd
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 315
+        width: 178
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ProgressBarBackingHomeMid
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 13
+        width: 170
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ProgressBarFillCoin
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 440
+        width: 278
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
       name: ProgressBarFillHealth
       rect:
         serializedVersion: 2
@@ -130,6 +229,19 @@ TextureImporter:
         y: 644
         width: 412
         height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ProgressBarFillHome
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 85
+        width: 125
+        height: 90
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,9 +291,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 436
-        y: 942
-        width: 72
-        height: 81
+        y: 943
+        width: 58
+        height: 80
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

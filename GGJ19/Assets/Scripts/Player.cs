@@ -47,7 +47,6 @@ public class Player : MonoBehaviour
     {
         m_currentDistance += Time.deltaTime * m_speedMetresPerSecond;
         m_moving = true;
-        Debug.Log(m_currentDistance);
 
         if(OnDistanceChanged != null)
         {
@@ -70,6 +69,13 @@ public class Player : MonoBehaviour
         {
             OnStatChange(stat, m_currentStats[statAsInt], delta);
         }
+    }
+
+    // Return the stat value
+    //
+    public int CurrentStatValue(Stat stat)
+    {
+        return m_currentStats[(int)stat];
     }
 
     public bool IsDead()
