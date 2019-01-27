@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Predator</id>
+		<text>You could swear that something is following you, yet every time you turn to check, you see nothing. A loud snapping sound comes from behind and you pivot to view it, meeting the glowing white eyes of a huge shaggy-furred beast, not 20 feet away. </text>
+		<tier>1</tier>
+		<choice>
+			<text>Run</text>
+			<outcome chance="75">
+				<text>The galloping gait of the beast behind you drowns out the sound of your own footfall. Before you know it, you're pinned face-down, a great weight pressing into your back. Claws and jaws begin slicing into your flesh. You feel hot breathe on your neck as needle-like pricks start to sink in. Suddenly, a large explosion goes off in the woods nearby. A deep growl is released before the beast then dashes off in the opposite direction.</text>
+				<hp>-30</hp>
+				<stamina>-15</stamina>
+			</outcome>
+			<outcome chance="25">
+				<text>Sprinting as quickly as your legs can carry you, you attempt to outrun the behemoth. The thudding of its paws meeting the ground hints that it's in range of pouncing when a huge explosion goes off nearby. The blast startles both you and the beast but it's enough to persuade the creature into giving up the chase.</text>
+				<stamina>-15</stamina>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Feed</text>
+			<outcome>
+				<text>You scramble about your person looking for something you can use as a substitute for the beast's hunger. You manage to find a ration you've had stored for when in dire need, such as now. You toss the ration towards the gargantuan. It ambles over to it, sniffs at it, then licks it up, devouring it whole. The creature then stares at you, growls and leaps off into the forest.</text>
+				<hunger>-25</hunger>
+			</outcome>
+		</choice>
+	</event>

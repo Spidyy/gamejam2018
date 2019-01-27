@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Road Folk</id>
+		<text>You come across a fork in the road. One path has a well-worn path surrounded by a canopy of tree branches. The other a muddy hill, exposed to the elements.</text>
+		<tier>1</tier>
+		<choice>
+			<text>Path</text>
+			<outcome chance="50">
+				<text>As you enter, a deathly silence descends. After a few more feet, a sharp stinging pain runs across your upper arm. Looking in the direction of where you heard a dull thud, you see an arrow half buried in a tree. You race through the rest of the enclosed path, arrows narrowly missing you. Finally, you break out from the canopy where visibility is much better. No more arrows seem to be chasing you.</text>
+				<hp>-15</hp>
+				<stamina>-15</stamina>
+			</outcome>
+			<outcome chance="25">
+				<text>Treading the frequently used path, an overwhelming pain brings you to your knees. Looking down, you see an arrow buried into the back of your thigh. You strain through the pain, a hobbled run getting you from tree to tree as arrows fly past, planting themselves into bark. Finally, you make it into more visible surroundings. You pack around the arrow to slow the bleeding, in hope of finding someone that can treat the wound.</text>
+				<hp>-35</hp>
+				<stamina>-20</stamina>
+			</outcome>
+			<outcome chance="25">
+				<text>You enter the canopied path alert and mindful of your surrounds. A number of dubious rustling can be heard from within adjacent thicket. Despite your suspcious, however, you seem to make it through the darkened path without encounter, able to freely continue on your way home.</text>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Hill</text>
+			<outcome>
+				<text>You take the muddy hill over the dark path on your way towards home. As recent rain has caused the hill to become extremely slippery, finding stable footing proves difficult. Regardless, you manage to make it to the crown of the hill and join the path leading back home without major incident.</text>
+				<stamina>-15</stamina>
+			</outcome>
+		</choice>
+	</event>

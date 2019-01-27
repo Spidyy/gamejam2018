@@ -6,7 +6,7 @@
 		<choice>
 			<text>Run</text>
 			<outcome>
-				<text>Before anything happens, you try to escape the circle. Passing across the perimeter of the circle felt like pushing through a wall of razor blades. Despite this, you made it out of the strange sigil.</text>
+				<text>Before anything happens, you try to escape the circle. Passing across its perimeter falls like pushing through a wall of razor blades. You make  it out of the strange sigil but notice that your covered in hundreds of tiny, bleeding cuts.</text>
 				<hp>-40</hp>
 			</outcome>
 		</choice>
