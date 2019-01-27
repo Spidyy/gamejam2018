@@ -6,11 +6,11 @@
 		<choice>
 			<text>Climb</text>
 			<outcome chance="60">
-				<text>You attempt to climb out of the sinkhole using the roots and rocks that jut out from the pit's walls. Twice, you get tantalisingly close to the top before losing your footing and falling back down. On the third attempt, however, you manage to successfully make it out. Mildly exhausted, you swipe chucks of dirt off your clothing as move en route to home.</text>
+				<text>You attempt to climb out of the sinkhole using the roots and rocks jutting out from the pit's walls. Twice, you get tantalisingly close to the top before losing your footing and falling back down. On the third attempt, you manage to successfully make it out and move en route to home.</text>
 				<stamina>-20</stamina>
 			</outcome>
 			<outcome chance="40">
-				<text>Time and time again, your best efforts to escape the pit are thwarted by the loose stones and roots the line the cavities walls. You spend a little time reflecting on your failures before finally mustering the will to try again. Sometime later, you emerge from the sinkhole. The exhaustion brought on by the ordeal elipse the minor cuts and bruises caused by it.</text>
+				<text>Time and time again, your best efforts to escape the pit are thwarted by the loose stones and roots the line the cavities walls. Sometime later, you emerge from the sinkhole. The exhaustion brought on by the ordeal elipses the minor cuts and bruises it caused.</text>
 				<hp>-10</hp>
 				<hunger>-20</hunger>
 				<stamina>-30</stamina>
@@ -19,12 +19,12 @@
 		<choice>
 			<text>Wait</text>
 			<outcome chance="80">
-				<text>You wait inside the sinkhole for a passerby to help you out. Minutes pass. Hours pass. Almost an entire day of rest passes before a wandering pilgrim walks by. Fortunately, they are eager to help someone in need, fetching a long sturdy branch used to fish you out of the pit. You thank them repeatedly before bidding each other farewell and going your separate ways.</text>
+				<text>You wait inside the sinkhole for a passerby to help you out. Minutes pass. Hours pass. Almost an entire day of rest passes before a wandering pilgrim walks, happy to fish you out of the pit. You thank them repeatedly before bidding each other farewell and going your separate ways.</text>
 				<hunger>-40</hunger>
 				<stamina>+40</stamina>
 			</outcome>
 			<outcome chance="20">
-				<text>You decide it best to wait for help before considering exherting yourself. Miraculously, after what must only be 15 minutes, a rope is thrown down over the edge of the sinkhole. You grip it, tugging firmly before throwing your entire weight on to it. You climb out with ease, ready to praise whoever helped you out but there's nobody to be seen. You spend a minute looking around for any signs of a saviour but detect nothing. After saying thank you out loud, you press on for home.</text>
+				<text>Miraculously, after what must only be 15 minutes, a rope is thrown down over the edge of the sinkhole. You grip it, tugging firmly before throwing your entire weight on to it. You climb out with ease, ready to praise whoever helped you out but there's nobody to be seen...</text>
 				<stamina>-5</stamina>
 			</outcome>
 		</choice>
