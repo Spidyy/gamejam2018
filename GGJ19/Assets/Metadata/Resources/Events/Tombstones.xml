@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 	<event>
 		<id>Tombstones</id>
-		<text>You appraoch an odd tombstone that's been placed right in the middle of the road.</text>
+		<text>For whatever reason, a giant tombstone has been placed in the middle of the path. The weather-worn stone holds the image of some kind of four-legged creature.</text>
 		<tier>1</tier>
 		<choice>
 			<text>Read</text>
