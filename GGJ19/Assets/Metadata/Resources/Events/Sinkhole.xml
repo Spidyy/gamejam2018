@@ -12,7 +12,7 @@
 			<outcome chance="40">
 				<text>Time and time again, your best efforts to escape the pit are thwarted by the loose stones and roots the line the cavities walls. You spend a little time reflecting on your failures before finally mustering the will to try again. Sometime later, you emerge from the sinkhole. The exhaustion brought on by the ordeal elipse the minor cuts and bruises caused by it.</text>
 				<hp>-10</hp>
-				<hunger>-20</huner>
+				<hunger>-20</hunger>
 				<stamina>-30</stamina>
 			</outcome>
 		</choice>
