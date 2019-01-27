@@ -199,6 +199,32 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">CoinIcon.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>23,24,45,48</rect>
+                <key>scale9Paddings</key>
+                <rect>23,24,45,48</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">HeadIcon.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>36,44,71,88</rect>
+                <key>scale9Paddings</key>
+                <rect>36,44,71,88</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">HealthIcon.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -209,6 +235,32 @@
                 <rect>24,21,47,42</rect>
                 <key>scale9Paddings</key>
                 <rect>24,21,47,42</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">HomeBarOverlaySegment.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>20,28,40,57</rect>
+                <key>scale9Paddings</key>
+                <rect>20,28,40,57</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">HouseIcon.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>33,45,66,89</rect>
+                <key>scale9Paddings</key>
+                <rect>33,45,66,89</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -251,6 +303,46 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">ProgressBarBackingHomeEndLeft.png</key>
+            <key type="filename">ProgressBarBackingHomeEndRight.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>45,31,89,62</rect>
+                <key>scale9Paddings</key>
+                <rect>45,31,89,62</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">ProgressBarBackingHomeMid.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>43,31,85,62</rect>
+                <key>scale9Paddings</key>
+                <rect>43,31,85,62</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">ProgressBarFillCoin.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>70,28,139,56</rect>
+                <key>scale9Paddings</key>
+                <rect>70,28,139,56</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">ProgressBarFillHealth.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -261,6 +353,19 @@
                 <rect>103,22,206,44</rect>
                 <key>scale9Paddings</key>
                 <rect>103,22,206,44</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">ProgressBarFillHome.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>31,23,63,45</rect>
+                <key>scale9Paddings</key>
+                <rect>31,23,63,45</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -301,6 +406,45 @@
                 <rect>18,20,36,41</rect>
                 <key>scale9Paddings</key>
                 <rect>18,20,36,41</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">btn_holder.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>122,36,243,72</rect>
+                <key>scale9Paddings</key>
+                <rect>122,36,243,72</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">godlight.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>250,174,500,349</rect>
+                <key>scale9Paddings</key>
+                <rect>250,174,500,349</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">text_holder.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>144,58,289,116</rect>
+                <key>scale9Paddings</key>
+                <rect>144,58,289,116</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
