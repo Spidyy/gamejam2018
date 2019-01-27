@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Alabaster Shrine</id>
+		<text>At the edge of the road sits an alabaster shrine, depicting the image of a winged beast. </text>
+		<tier>1</tier>
+		<choice>
+			<text>Pray</text>
+			<outcome chance="75">
+				<text>Despite having never seen a shrine similar to this one before, you decide to use it as a conduit for prayer, preying for safe passage on your journey home. Whether the prayer fell on deaf ears or not doesn't affect the fact that praying gave you a small glimmer of hope.</text>
+				<stamina>+15</stamina>
+			</outcome>
+			<outcome chance="25">
+				<text>You use the unfamiliar shrine as a beckon for prayer, wishing for a secure journey back home. The alabaster shrine glows brilliantly, bathing you in its light. As it engulfs you, you feel the worries and dangers ahead of you wane as strength builds within you.</text>
+
+				<stamina>+15</stamina>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Ignore</text>
+			<outcome chance="75">
+				<text>Considering it unwise to prey to an unknown deity, you leave it in your wake, casting your efforts into returning home.</text>
+			</outcome>
+			<outcome chance="25">
+				<text>Though the shrine is inanimate, you can't help but feel that choosing to walk away angered it. As you turn your back, you feel the ground trembling below you. A hefty branch is shaken free from above, sending it crashing down on to you.</text>
+				<hp>-20</hp>
+			</outcome>
+		</choice>
+	</event>

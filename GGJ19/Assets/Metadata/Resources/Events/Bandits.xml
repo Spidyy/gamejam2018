@@ -7,7 +7,7 @@
 			<text>Persuade</text>
 			<outcome chance="80">
 				<text>You plead with the bandits but your appeal falls on deaf ears. Togther they advance upon you, beating you down. After failing to find any gold on your person, they leave you to broken on the road.</text>
-				<hp>-35</hp>
+				<hp>-40</hp>
 			</outcome>
 			<outcome chance="20">
 				<text>You somehow manage to convince the bandits that you're not worth their time. While snorting and spitting, they mock you and go on their way.</text>

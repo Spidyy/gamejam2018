@@ -11,16 +11,18 @@ using TagFramework;
 //
 public class GameDirector : MonoSingleton<GameDirector>
 {
+    public float m_minEventInterval = 3f;
+    public float m_maxEventInterval = 7f;
+
     private const float DELAY_OFFSET = 0.8f;
     private Player m_player;
 
     public EncounterUIController m_encounterUI;
     public EncounterSystem encounterSystem;
-    public float m_eventInterval = 5f;
-
-    private ScrollingObject[] m_scrollingObjects;
+    
+    private ParallaxLayer[] m_scrollingObjects;
     private HudUIController m_hudUIController = null;
-
+    
     private float m_nextEventDistance;
 
     private Encounter.Outcome m_currentOutcome;
@@ -32,7 +34,7 @@ public class GameDirector : MonoSingleton<GameDirector>
         m_player = FindObjectOfType<Player>();
         LogUtils.Assert(m_player != null, "Player is null");
 
-        m_scrollingObjects = FindObjectsOfType<ScrollingObject>();
+        m_scrollingObjects = FindObjectsOfType<ParallaxLayer>();
     }
 
     private void Start()
@@ -143,7 +145,7 @@ public class GameDirector : MonoSingleton<GameDirector>
 
     private float GenerateNextEventDistance()
     {
-        return m_nextEventDistance + m_eventInterval;
+        return m_nextEventDistance + Random.Range(m_minEventInterval, m_maxEventInterval);
     }
 
 }

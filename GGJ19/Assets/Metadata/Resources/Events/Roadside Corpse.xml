@@ -7,13 +7,13 @@
 			<text>Search</text>
 			<outcome chance="66">
 				<text>While only just managing to put aside extreme feelings of apprehension and disgust, you flip the bloated corpse and search it for valuables, uncovering a few coins in the process.</text>
-				<gold>+5</gold>
-				<stamina>-5</stamina>
+				<gold>+10</gold>
+				<stamina>-10</stamina>
 			</outcome>
       <outcome chance="33">
 				<text>While flipping over the body to search it easier, the badly decomposed corpse jerks upwards, quickly clamping its ragged teeth down on to your arm before releasing and falling back into the ditch. As you stumble backwards, you swear that you can hear mocking laughter coming from the direction of the corpse.</text>
 				<hp>-15</hp>
-				<stamina>-5</stamina>
+				<stamina>-10</stamina>
 			</outcome>
 		</choice>
 		<choice>

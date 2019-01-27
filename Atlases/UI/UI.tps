@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>4.4.0</string>
         <key>fileName</key>
-        <string>/Users/taggames/Work/GGJ19/Atlases/UI/UI.tps</string>
+        <string>/Users/taggames/Work/GGJ19/Repo/Atlases/UI/UI.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -150,7 +150,7 @@
             <key>datafile</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../../Repo/GGJ19/Assets/Art/Atlases/UI.tpsheet</filename>
+                <filename>../../GGJ19/Assets/Art/Atlases/UI.tpsheet</filename>
             </struct>
         </map>
         <key>multiPack</key>
