@@ -26,6 +26,7 @@ TextureImporter:
     21300038: text_holder
     21300040: ProgressBarBackingHomeEndLeft
     21300042: ProgressBarBackingHomeEndRight
+    21300044: ProgressBarFillHungerpng
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
