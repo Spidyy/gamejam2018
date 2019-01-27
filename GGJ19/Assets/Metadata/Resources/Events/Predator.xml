@@ -6,7 +6,7 @@
 		<choice>
 			<text>Run</text>
 			<outcome chance="75">
-				<text>You spin around and run harder than you ever have before, the galloping gait of the beast behind you drowning out the sound of your own footfall. Before you know it, you're being pinned to the ground face-down by a great weight pressing into your back. The beast's claws and jaws begin slicing into your flesh. You then feel it's hot breathe on your neck, as needle-like pricks start to sink in. Suddenly, a large explosion goes off in the woods nearby. Startled, the beast's focus snaps to the noise. A deep growl is released before the beast then dashes off in the opposite direction.</text>
+				<text>The galloping gait of the beast behind you drowns out the sound of your own footfall. Before you know it, you're pinned face-down, a great weight pressing into your back. Claws and jaws begin slicing into your flesh. You feel hot breathe on your neck as needle-like pricks start to sink in. Suddenly, a large explosion goes off in the woods nearby. A deep growl is released before the beast then dashes off in the opposite direction.</text>
 				<hp>-30</hp>
 				<stamina>-15</stamina>
 			</outcome>

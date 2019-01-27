@@ -6,7 +6,7 @@
 		<choice>
 			<text>Pray</text>
 			<outcome chance="75">
-				<text>Despite having never seen a shrine similar to this one before, you decide to use it as a conduit for prayer, preying for safe passage on your journey home. Whether the prayer fell on deaf ears or not doesn't affect the fact that praying gave you a small glimmer of hope.</text>
+				<text>Despite having never seen a shrine similar to this one, you decide to use it as a conduit for prayer, preying for safe passage on your journey home. Whether the prayer fell on deaf ears or not doesn't affect the fact that praying gave you a small glimmer of hope.</text>
 				<stamina>+15</stamina>
 			</outcome>
 			<outcome chance="25">
