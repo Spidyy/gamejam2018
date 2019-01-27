@@ -14,7 +14,7 @@ public static class StatConsts
         100,            // hp
         100,            // sta
         100,            // hun
-        50              // gold
+        0              // gold
     };
 
     public readonly static int[] k_maxValues = new int[]
