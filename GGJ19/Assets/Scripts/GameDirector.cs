@@ -35,6 +35,7 @@ public class GameDirector : MonoSingleton<GameDirector>
     private EndScreenUIController m_endScreenController = null;
     
     private float m_nextEventDistance;
+    private bool m_scrollingActive = false;
 
     private Encounter.Outcome m_currentOutcome;
 
@@ -73,69 +74,92 @@ public class GameDirector : MonoSingleton<GameDirector>
 
     private void Update()
     {
-        if(m_state == State.Intro)
+        switch(m_state)
         {
-            if(Input.anyKeyDown)
-            {
-                introScreenAnimator.SetTrigger("FadeOut");
-                m_state = State.FadeOut;
-            }
-        }
-        else if(m_state == State.PlayThrough)
-        {
-            if(m_player.m_currentDistance < m_nextEventDistance)
-            {
-                m_player.Move();
-                if(m_player.m_currentDistance >= m_nextEventDistance)
+            case State.Intro:
                 {
-                    m_player.StopAt(m_nextEventDistance);
+                    if(Input.anyKeyDown)
+                    {
+                        introScreenAnimator.SetTrigger("FadeOut");
+                        m_state = State.FadeOut;
+                    }
+
+                    break;
+                }
+            case State.PlayThrough:
+                {
+                    if(m_player.m_currentDistance < m_nextEventDistance)
+                    {
+                        m_player.Move();
+                        if(m_player.m_currentDistance >= m_nextEventDistance)
+                        {
+                            m_player.StopAt(m_nextEventDistance);
+                            SetScrollingActive(false);
+
+                            if(m_player.GetProgressToHome() < 0.99f)
+                            {
+                                // trigger event
+                                m_encounterUI.ShowEncounter();
+                            }
+                            else
+                            {
+                                //--player reached home
+                                m_endScreenController.ShowEndScreen(EndScreenUIController.EndScreen.WIN);
+                            }
+                        }
+                    }
+
+                    if(m_player.IsDead() && m_endScreenController.ActiveScreen == EndScreenUIController.EndScreen.NONE)
+                    {
+                        //--Stop the player
+                        m_player.StopAt(m_player.m_currentDistance);
+
+                        //--Set death text
+                        if(m_player.CurrentStatValue(Stat.HP) <= 0)
+                        {
+                            m_endScreenController.SetDeath(Stat.HP);
+                        }
+                        else if(m_player.CurrentStatValue(Stat.HUN) <= 0)
+                        {
+                            m_endScreenController.SetDeath(Stat.HUN);
+                        }
+                        else if(m_player.CurrentStatValue(Stat.STA) <= 0)
+                        {
+                            m_endScreenController.SetDeath(Stat.STA);
+                        }
+
+                        //--Show end screen 
+                        m_endScreenController.ShowEndScreen(EndScreenUIController.EndScreen.LOSE);
+
+                        m_state = State.Dead;
+                    }
+
+                    break;
+                }
+            case State.Dead:
+                {
                     SetScrollingActive(false);
 
-                    if(m_player.GetProgressToHome() < 0.99f)
-                    {
-                        // trigger event
-                        m_encounterUI.ShowEncounter();
-                    }
-                    else
-                    {
-                        //--player reached home
-                        m_endScreenController.ShowEndScreen(EndScreenUIController.EndScreen.WIN);
-                    }
+                    break;
                 }
-            }
-
-            if(m_player.IsDead() && m_endScreenController.ActiveScreen == EndScreenUIController.EndScreen.NONE)
-            {
-                //--Stop the player
-                m_player.StopAt(m_player.m_currentDistance);  
-
-                //--Set death text
-                if(m_player.CurrentStatValue(Stat.HP) <= 0)
+            case State.Home:
+            default:
                 {
-                    m_endScreenController.SetDeath(Stat.HP);
+                    break;
                 }
-                else if(m_player.CurrentStatValue(Stat.HUN) <= 0)
-                {
-                    m_endScreenController.SetDeath(Stat.HUN);
-                }
-                else if(m_player.CurrentStatValue(Stat.STA) <= 0)
-                {
-                    m_endScreenController.SetDeath(Stat.STA);
-                }
-
-                //--Show end screen 
-                m_endScreenController.ShowEndScreen(EndScreenUIController.EndScreen.LOSE);
-
-                m_state = State.Dead;
-            }
         }
     }
 
     private void SetScrollingActive(bool active)
     {
-        for(int i = 0; i < m_scrollingObjects.Length; ++i)
+        if(active != m_scrollingActive)
         {
-            m_scrollingObjects[i].SetScrollingActive(active);
+            for(int i = 0; i < m_scrollingObjects.Length; ++i)
+            {
+                m_scrollingObjects[i].SetScrollingActive(active);
+            }
+
+            m_scrollingActive = active;
         }
     }
 
@@ -162,7 +186,7 @@ public class GameDirector : MonoSingleton<GameDirector>
         m_encounterUI.Hide();
         m_nextEventDistance = GenerateNextEventDistance();
         m_player.Move();
-        SetScrollingActive(true);
+        SetScrollingActive(!m_player.IsDead());
     }
 
     private void ApplyOutcome(Encounter.Outcome outcome)
