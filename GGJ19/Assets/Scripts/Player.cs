@@ -5,11 +5,11 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    private const int k_staminaDecrementSpeed = -1;
-    private const float k_staminaDecrementDelta = 1.0f;
+    private const int k_staminaDecrementSpeed = -2;
+    private const float k_staminaDecrementDelta = 5.0f;
 
-    private const int k_hungerDecrementSpeed = -5;
-    private const float k_hungerDecrementDelta = 25.0f;
+    private const int k_hungerDecrementSpeed = -2;
+    private const float k_hungerDecrementDelta = 5.0f;
 
     public float m_speedMetresPerSecond = 1f;
 
