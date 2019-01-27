@@ -38,9 +38,9 @@ public class FloatingText : MonoBehaviour
                 m_text.gameObject.SetActive(true);
             }
 
-            Vector3 position = m_rectTransform.position;
-            position.y -= Speed * Time.deltaTime;
-            m_rectTransform.position = position;
+            Vector2 position = m_rectTransform.anchoredPosition;
+            position.y += Speed * Time.deltaTime;
+            m_rectTransform.anchoredPosition = position;
 
             float lifetimeAlpha = (m_timer - Delay) / Duration;
 

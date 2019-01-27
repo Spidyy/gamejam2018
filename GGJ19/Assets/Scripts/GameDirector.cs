@@ -101,7 +101,7 @@ public class GameDirector : MonoSingleton<GameDirector>
         }
     }
 
-    public void OnOutcomeAccept(Encounter.Outcome outcome)
+    public void OnOutcomeAccept()
     {
         ApplyOutcome(m_currentOutcome);
         encounterSystem.SolveCurrentEvent();
