@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 1908110080, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 21856295958602844, guid: ae1743a224f157846a55656b2627c475,
+  m_Material: {fileID: 21317586980076582, guid: ae1743a224f157846a55656b2627c475,
     type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: 5282ce706fa5a714ea0efa1e5cc8998c, type: 2}
   m_spriteAsset: {fileID: 11400000, guid: ae1743a224f157846a55656b2627c475, type: 2}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 21856295958602844, guid: ae1743a224f157846a55656b2627c475,
+  m_sharedMaterial: {fileID: 21317586980076582, guid: ae1743a224f157846a55656b2627c475,
     type: 2}
   m_isDefaultMaterial: 1
   m_padding: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 1908110080, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 21856295958602844, guid: ae1743a224f157846a55656b2627c475,
+  m_Material: {fileID: 21317586980076582, guid: ae1743a224f157846a55656b2627c475,
     type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -469,7 +469,7 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: 5282ce706fa5a714ea0efa1e5cc8998c, type: 2}
   m_spriteAsset: {fileID: 11400000, guid: ae1743a224f157846a55656b2627c475, type: 2}
   m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 21856295958602844, guid: ae1743a224f157846a55656b2627c475,
+  m_sharedMaterial: {fileID: 21317586980076582, guid: ae1743a224f157846a55656b2627c475,
     type: 2}
   m_isDefaultMaterial: 1
   m_padding: 0

@@ -90,7 +90,7 @@ public class EncounterSystem : MonoBehaviour
             foreach (TextAsset xmlFile in xmlFiles)
             {
                 XmlDocument xmlDocument = new XmlDocument();
-                Debug.Log("Loading file " + xmlFile.name);
+                //Debug.Log("Loading file " + xmlFile.name);
                 xmlDocument.LoadXml(xmlFile.text);
 
                 if (xmlDocument.DocumentElement.Name == "events")
