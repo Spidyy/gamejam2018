@@ -11,6 +11,7 @@ using TagFramework;
 //
 public class GameDirector : MonoSingleton<GameDirector>
 {
+    private const float DELAY_OFFSET = 0.8f;
     private Player m_player;
 
     public EncounterUIController m_encounterUI;
@@ -21,6 +22,8 @@ public class GameDirector : MonoSingleton<GameDirector>
     private HudUIController m_hudUIController = null;
 
     private float m_nextEventDistance;
+
+    private Encounter.Outcome m_currentOutcome;
 
     public Player Player {  get { return m_player; } }
 
@@ -87,7 +90,7 @@ public class GameDirector : MonoSingleton<GameDirector>
         Encounter.Outcome outcome = current.Choices[choice].GetRandomOutcome();
         if (outcome != null)
         {
-            ApplyOutcome(outcome);
+            m_currentOutcome = outcome;
             m_encounterUI.ShowOutcome(outcome);
         }
         else
@@ -96,9 +99,11 @@ public class GameDirector : MonoSingleton<GameDirector>
         }
     }
 
-    public void OnOutcomeAccept()
+    public void OnOutcomeAccept(Encounter.Outcome outcome)
     {
+        ApplyOutcome(m_currentOutcome);
         encounterSystem.SolveCurrentEvent();
+        m_currentOutcome = null;
         m_encounterUI.Hide();
         m_nextEventDistance = GenerateNextEventDistance();
         m_player.Move();
@@ -107,24 +112,32 @@ public class GameDirector : MonoSingleton<GameDirector>
 
     private void ApplyOutcome(Encounter.Outcome outcome)
     {
+        float delay = 0f;
         if(outcome.HpModifier != 0)
         {
             m_player.AlterStat(Stat.HP, outcome.HpModifier);
+            m_encounterUI.AddFloatingText(Stat.HP, outcome.HpModifier, delay);
+            delay += DELAY_OFFSET;
         }
 
         if (outcome.StaminaModifier != 0)
         {
             m_player.AlterStat(Stat.STA, outcome.StaminaModifier);
+            m_encounterUI.AddFloatingText(Stat.STA, outcome.StaminaModifier, delay);
+            delay += DELAY_OFFSET;
         }
 
         if (outcome.HungerModifier != 0)
         {
             m_player.AlterStat(Stat.HUN, outcome.HungerModifier);
+            m_encounterUI.AddFloatingText(Stat.HUN, outcome.HungerModifier, delay);
+            delay += DELAY_OFFSET;
         }
 
         if (outcome.GoldModifier != 0)
         {
             m_player.AlterStat(Stat.GOLD, outcome.GoldModifier);
+            m_encounterUI.AddFloatingText(Stat.GOLD, outcome.GoldModifier, delay);
         }
     }
 

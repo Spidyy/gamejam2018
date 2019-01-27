@@ -272,6 +272,7 @@ MonoBehaviour:
   - 30
   - 20
   mEncounters: []
+  mHighestTier: 0
 --- !u!1 &345236094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1285,12 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114106496419110076, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: FloatingTextPrefab
+      value: 
+      objectReference: {fileID: 1204500098569116, guid: 97fa6f0068450024991274ad320418ef,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16c17916b94ac4623bf39c1f83e8c621, type: 2}
   m_IsPrefabParent: 0

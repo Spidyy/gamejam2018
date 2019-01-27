@@ -22,6 +22,8 @@ public class EncounterUIController : MonoBehaviour
     public EncounterSystem encounterSystem;
     public Player player;
 
+    public GameObject FloatingTextPrefab;
+
     private void Start ()
     {
         
@@ -131,6 +133,31 @@ public class EncounterUIController : MonoBehaviour
         else
         {
             m_outcomeButtonText.text = outcome.CloseText;
+        }
+    }
+
+    public void AddFloatingText(Stat stat, int modifier, float delay)
+    {
+        GameObject floatingTextObject = Instantiate(FloatingTextPrefab, transform.parent);
+        FloatingText floatingText = floatingTextObject.GetComponent<FloatingText>();
+        floatingText.Delay = delay;
+        floatingText.Color = (modifier < 0) ? Color.red : Color.white;
+        string sign = (modifier < 0)? "-" : "+";
+        string value = sign + Mathf.Abs(modifier).ToString();
+        switch (stat)
+        {
+            case Stat.HP:
+                floatingText.Text = value + " Hp";
+                break;
+            case Stat.STA:
+                floatingText.Text = value + " Stamina";
+                break;
+            case Stat.HUN:
+                floatingText.Text = value + " Hunger";
+                break;
+            case Stat.GOLD:
+                floatingText.Text = value + " Gold";
+                break;
         }
     }
 
