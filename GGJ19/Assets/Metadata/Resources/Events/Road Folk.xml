@@ -6,12 +6,12 @@
 		<choice>
 			<text>Path</text>
 			<outcome chance="50">
-				<text>As you enter, a deathly silence descends. After a few more feet, a sharp stinging pain runs across your upper arm. Looking in the direction of where you heard a dull thud, you see an arrow half buried in a tree. You race through the rest of the enclosed path, arrows narrowly missing you. Finally, you break out from the canopy where visibility is much better. No more arrows seem to be chasing you.</text>
+				<text>A sharp stinging pain runs across your upper arm. Looking in the direction of where you heard a dull thud, you see an arrow half buried in a tree. You race through the rest of the enclosed path, arrows narrowly missing you. Finally, you break out into safety, where visibility is much better.</text>
 				<hp>-15</hp>
 				<stamina>-15</stamina>
 			</outcome>
 			<outcome chance="25">
-				<text>Treading the frequently used path, an overwhelming pain brings you to your knees. Looking down, you see an arrow buried into the back of your thigh. You strain through the pain, a hobbled run getting you from tree to tree as arrows fly past, planting themselves into bark. Finally, you make it into more visible surroundings. You pack around the arrow to slow the bleeding, in hope of finding someone that can treat the wound.</text>
+				<text>An overwhelming pain brings you to your knees. Looking down, you see an arrow buried into the back of your thigh. You strain through the pain, a hobbled run getting you from tree to tree as arrows fly past. Finally, you make it into more visible surroundings with the hope of finding someone that can treat the wound.</text>
 				<hp>-35</hp>
 				<stamina>-20</stamina>
 			</outcome>
