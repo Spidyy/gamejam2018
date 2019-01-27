@@ -22,6 +22,7 @@ public class GameDirector : MonoSingleton<GameDirector>
     
     private ParallaxLayer[] m_scrollingObjects;
     private HudUIController m_hudUIController = null;
+    private EndScreenUIController m_endScreenController = null;
     
     private float m_nextEventDistance;
 
@@ -43,23 +44,11 @@ public class GameDirector : MonoSingleton<GameDirector>
         m_player.Move();
         SetScrollingActive(true);
 
-        var hudControlelrs = FindObjectsOfType<HudUIController>();
-        if(hudControlelrs.Length == 0)
-        {
-            m_hudUIController = HudUIControllerFactory.CreateHudUIController();
-        }
-        else if(hudControlelrs.Length > 0)
-        {
-            m_hudUIController = hudControlelrs[0];
-
-            for(int i = 1; i < hudControlelrs.Length; ++i)
-            {
-                Destroy(hudControlelrs[i]);
-            }
-        }
-
-        Debug.Assert(m_hudUIController != null, "m_hudUIController is null");
+        m_hudUIController = FindObjectOfTypeAndClearDuplicates<HudUIController>();
         m_hudUIController.Initialise();
+
+        m_endScreenController = FindObjectOfTypeAndClearDuplicates<EndScreenUIController>();
+        m_endScreenController.Initialise();
     }
 
     private void Update ()
@@ -146,6 +135,28 @@ public class GameDirector : MonoSingleton<GameDirector>
     private float GenerateNextEventDistance()
     {
         return m_nextEventDistance + Random.Range(m_minEventInterval, m_maxEventInterval);
+    }
+
+    //
+    //
+    private T FindObjectOfTypeAndClearDuplicates<T>() where T : MonoBehaviour
+    {
+        T instance = null;
+        var foundInstances = FindObjectsOfType<T>();
+
+        if(foundInstances.Length > 0)
+        {
+            instance = foundInstances[0];
+
+            for(int i = 1; i < foundInstances.Length; ++i)
+            {
+                Destroy(foundInstances[i]);
+            }
+        }
+
+        Debug.Assert(instance != null, "Unable to find references of " + typeof(T).ToString());
+
+        return instance;
     }
 
 }
