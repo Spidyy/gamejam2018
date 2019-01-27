@@ -69,6 +69,7 @@ public class HudUIController : MonoBehaviour
     {
         Debug.Log(string.Format("OnStatChanged. stat; {0} newTotal: {1} delta: {2} ", stat, newTotal, delta));
 
+        float progress = 0.0f;
         switch(stat)
         {
             case Stat.GOLD:
@@ -79,22 +80,22 @@ public class HudUIController : MonoBehaviour
                 }
             case Stat.HP:
                 {
-                    float progress = Mathf.Clamp01((float)m_player.CurrentStatValue(stat) / (float)StatConsts.k_maxValues[(int)stat]);
-                    m_healthProgressBar.UpdateProgress(progress);
+                    progress = Mathf.Clamp01((float)m_player.CurrentStatValue(stat) / (float)StatConsts.k_maxValues[(int)stat]);
+                    m_healthProgressBar.SetTargetProgress(progress);
 
                     break;
                 }
             case Stat.HUN:
                 {
-                    float progress = Mathf.Clamp01((float)m_player.CurrentStatValue(stat) / (float)StatConsts.k_maxValues[(int)stat]);
-                    m_hungerProgressBar.UpdateProgress(progress);
+                    progress = Mathf.Clamp01((float)m_player.CurrentStatValue(stat) / (float)StatConsts.k_maxValues[(int)stat]);
+                    m_hungerProgressBar.SetTargetProgress(progress);
 
                     break;
                 }
             case Stat.STA:
                 {
-                    float progress = Mathf.Clamp01((float)m_player.CurrentStatValue(stat) / (float)StatConsts.k_maxValues[(int)stat]);
-                    m_staminaProgressBar.UpdateProgress(progress);
+                    progress = Mathf.Clamp01((float)m_player.CurrentStatValue(stat) / (float)StatConsts.k_maxValues[(int)stat]);
+                    m_staminaProgressBar.SetTargetProgress(progress);
 
                     break;
                 }
