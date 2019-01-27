@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class ParallaxLayer : MonoBehaviour
 {
+    private const float k_globalParallaxScale = 0.28f;
+
     public int m_numTiles = 6;
     public bool m_invertAlternateTiles = false;
     public bool m_randomlyInvertTiles = false;
@@ -58,7 +60,7 @@ public class ParallaxLayer : MonoBehaviour
             go.transform.localScale = new Vector2(xScale, 1f);
 
             m_tiles[i] = go.AddComponent<ParallaxTile>();
-            m_tiles[i].m_scrollSpeed = m_scrollSpeed;
+            m_tiles[i].m_scrollSpeed = m_scrollSpeed * k_globalParallaxScale;
 
             m_tiles[i].m_horizontalLength = width.Value;
             m_tiles[i].m_resetOffset = width.Value * m_numTiles;
