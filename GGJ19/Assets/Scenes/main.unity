@@ -448,7 +448,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1493849941}
-  - {fileID: 1746316200}
+  - {fileID: 2139200914}
   - {fileID: 1599558604}
   - {fileID: 1174133568}
   - {fileID: 350751848}
@@ -1462,12 +1462,6 @@ Prefab:
       objectReference: {fileID: 1731028579}
     - target: {fileID: 114106496419110076, guid: 16c17916b94ac4623bf39c1f83e8c621,
         type: 2}
-      propertyPath: FloatingTextPrefab
-      value: 
-      objectReference: {fileID: 1204500098569116, guid: 97fa6f0068450024991274ad320418ef,
-        type: 2}
-    - target: {fileID: 114106496419110076, guid: 16c17916b94ac4623bf39c1f83e8c621,
-        type: 2}
       propertyPath: FloatingTextSpawnTransform
       value: 
       objectReference: {fileID: 350751848}
@@ -1591,11 +1585,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!224 &1746316200 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224840634710770684, guid: e1eb9fe02238f4fa39598de4ce41014b,
-    type: 2}
-  m_PrefabInternal: {fileID: 822669978}
 --- !u!1001 &1922668904
 Prefab:
   m_ObjectHideFlags: 0
@@ -1810,3 +1799,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 630f59f8ac8ba47aeb70993d5bab30dc, type: 2}
   m_IsPrefabParent: 0
+--- !u!224 &2139200914 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224840634710770684, guid: e1eb9fe02238f4fa39598de4ce41014b,
+    type: 2}
+  m_PrefabInternal: {fileID: 822669978}

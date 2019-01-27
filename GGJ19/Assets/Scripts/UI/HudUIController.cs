@@ -13,8 +13,6 @@ public class HudUIController : MonoBehaviour
     [SerializeField]
     private TMP_Text m_goldText = null;
     [SerializeField]
-    private TMP_Text m_distanceText = null;
-    [SerializeField]
     private Slider m_homeBarSlider = null;
 
     private Player m_player = null;
@@ -27,7 +25,6 @@ public class HudUIController : MonoBehaviour
         Debug.Assert(m_hungerProgressBar != null, "Hunger progress bar is null");
         Debug.Assert(m_staminaProgressBar != null, "Stamina progress bar is null");
         Debug.Assert(m_goldText != null, "Gold text is null");
-        Debug.Assert(m_distanceText != null, "m_distanceText is null");
         Debug.Assert(m_homeBarSlider != null, "home bar slider is null");
 	}
 
@@ -61,8 +58,6 @@ public class HudUIController : MonoBehaviour
     /// 
     private void OnDistanceChanged(float distance)
     {
-        m_distanceText.text = string.Format("{0}m", Mathf.FloorToInt(distance));
-
         //--TODO: Get the correct home percentage
         float homeProgress = m_player.m_currentDistance / 100.0f;
         m_homeBarSlider.value = Mathf.Clamp01(homeProgress);
