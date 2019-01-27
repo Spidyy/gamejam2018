@@ -6,7 +6,7 @@
 		<choice>
 			<text>Pray</text>
 			<outcome chance="75">
-				<text>You close your eyes in front of the shrine and pray that you make it home in one piece. Upon giving yourself your sight back, you see that the eyes of the horned bird are glowing red. A sharp, deep pain burst through your chest as visions of your home set ablaze race through your mind.</text>
+				<text>You close your eyes in front of the shrine and pray that you make it home in one piece. Upon giving yourself your sight back, you see that the eyes of the horned bird are glowing red. A sharp, deep pain bursts through your chest, as visions of your home set ablaze race through your mind.</text>
 				<hp>-25</hp>
 				<stamina>-15</stamina>
 			</outcome>
