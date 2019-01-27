@@ -1,11 +1,5 @@
-﻿//
-// Copyright (c) 2018 Tag Games Ltd. All rights reserved
-//
-
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
-using TagFramework;
 
 // runs the core loop of the game
 //
@@ -46,7 +40,7 @@ public class GameDirector : MonoSingleton<GameDirector>
     private void Start()
     {
         m_player = FindObjectOfType<Player>();
-        LogUtils.Assert(m_player != null, "Player is null");
+        Debug.Assert(m_player != null, "Player is null");
 
         m_scrollingObjects = FindObjectsOfType<ParallaxLayer>();
 
