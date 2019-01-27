@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 68d913b4d8da24189a52080beff83996
-timeCreated: 1548530579
-licenseType: Pro
+timeCreated: 1548550967
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: HealthIcon
@@ -244,7 +244,7 @@ TextureImporter:
         height: 90
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 45, y: 0, z: 31, w: 0}
       outline: []
       tessellationDetail: -1
     - serializedVersion: 2
