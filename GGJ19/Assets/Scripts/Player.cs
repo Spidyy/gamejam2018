@@ -5,11 +5,19 @@ using System;
 
 public class Player : MonoBehaviour
 {
+    private const int k_staminaDecrementSpeed = -1;
+    private const float k_staminaDecrementDelta = 1.0f;
+
+    private const int k_hungerDecrementSpeed = -5;
+    private const float k_hungerDecrementDelta = 25.0f;
+
     public float m_speedMetresPerSecond = 1f;
 
     public bool m_moving = false;
     public float m_currentDistance = 0f;
 
+    private float m_prevStaminaDecementDistance = 0.0f;
+    private float m_prevHungerDecementDistance = 0.0f;
     private int[] m_currentStats;
     private Animator m_animator;
 
@@ -28,6 +36,10 @@ public class Player : MonoBehaviour
     {
         m_currentStats = GenerateStartingStats();
         m_animator = GetComponent<Animator>();
+
+        m_prevHungerDecementDistance =
+            m_prevStaminaDecementDistance = 
+            m_currentDistance = 0.0f;
     }
 
     public int[] GenerateStartingStats()
@@ -48,9 +60,28 @@ public class Player : MonoBehaviour
         m_currentDistance += Time.deltaTime * m_speedMetresPerSecond;
         m_moving = true;
 
+        HandleStatReductions();
+
         if(OnDistanceChanged != null)
         {
             OnDistanceChanged(m_currentDistance);
+        }
+    }
+
+    // Handle the reduction in stats as the player moves
+    //
+    private void HandleStatReductions()
+    { 
+        if(m_currentDistance - m_prevStaminaDecementDistance > k_staminaDecrementDelta)
+        {
+            AlterStat(Stat.STA, k_staminaDecrementSpeed);
+            m_prevStaminaDecementDistance = m_currentDistance;
+        }
+
+        if(m_currentDistance - m_prevHungerDecementDistance > k_hungerDecrementDelta)
+        {
+            AlterStat(Stat.HUN, k_hungerDecrementSpeed);
+            m_prevHungerDecementDistance = m_currentDistance;
         }
     }
 
