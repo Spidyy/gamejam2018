@@ -7,18 +7,18 @@
 			<text>Run</text>
 			<outcome>
 				<text>Before anything happens, you try to escape the circle. Passing across the perimeter of the circle felt like pushing through a wall of razor blades. Despite this, you made it out of the strange sigil.</text>
-				<hp>-20</hp>
+				<hp>-40</hp>
 			</outcome>
 		</choice>
 		<choice>
 			<text>Wait</text>
 			<outcome chance="50">
-				<text>You decide not to pass the circle's border. Waiting nervously within the sigil, the intensity of the red glowing increases. The glowing eventually reaches a zenith...and then gives out. The red of the sigil fades until it disappears enitrely. You wait for a moment longer before deciding that you're now free to go.</text>
+				<text>You decide not to pass the circle's border. Waiting nervously within the sigil, the intensity of the red glowing increases. It eventually reaches a zenith...and then gives out. The red of the sigil fades until it disappears enitrely. You wait for a moment before deciding that you're now free to go.</text>
 			</outcome>
 			<outcome chance="50">
 				<text>Nervously waiting within the sigil, the image of a bone altar saturates your mind. Around the altar, robed figures chant in unison. Abruptly they stop, immediately turning their heads to face you, as though harshly interrupted. Their gaze cannot be seen but can certainly be felt, weighing upon you like a fathomless sea. The image slowly turns to black. Your eyes open to the sight of a sigiless road, feeling profound fatigue and distress.</text>
-				<hp>-10</hp>
-				<stamina>-20</stamina>
+				<hp>-15</hp>
+				<stamina>-15</stamina>
 			</outcome>
 		</choice>
 	</event>

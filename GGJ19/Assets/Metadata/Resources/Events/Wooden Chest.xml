@@ -7,17 +7,17 @@
 			<text>Break</text>
 			<outcome chance="50">
 				<text>You attempt to forcely break the weakest point of the chest but to no aveil.</text>
-				<stamina>-5</stamina>
+				<stamina>-15</stamina>
 			</outcome>
 			<outcome chance="25">
 				<text>You focus all your might in a bid to break open the chest. However, it appears the chest is far sturdier than you, as a poorly launched kick badly twists an ankle upon impact. </text>
-				<hp>-10</hp>
-				<stamina>-5</stamina>
+				<hp>-15</hp>
+				<stamina>-15</stamina>
 			</outcome>
 			<outcome chance="25">
-				<text>You focus all your might in a bid to break open the chest. A perfectly honed strike causes the chest to burst open, spilling coins out onto the ground.</text>
-				<stamina>-5</stamina>
-				<gold>-10</gold>
+				<text>You channel strength in a bid to smash the chest as hard as you can. A perfectly honed strike causes it to burst open, spilling coins out onto the ground.</text>
+				<stamina>-10</stamina>
+				<gold>+15</gold>
 			</outcome>
 		</choice>
 		<choice>

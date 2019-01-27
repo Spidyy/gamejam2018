@@ -6,7 +6,7 @@
 		<choice>
 			<text>Greet</text>
 			<outcome chance="75">
-				<text>Stammering, you warmly address the witch. She cackles and questions as to whether you would like to come inside. Upon declincing, she blows a dusty substance in your face. The next thing you know, you're standing back on the road feeling completely drained and extremely unwell. </text>
+				<text>Stammering, you warmly address the witch. She cackles and questions as to whether you would like to come inside. Upon declincing, she blows a dusty substance in your face. The next thing you know, you're standing back on the road feeling completely drained and extremely unwell.</text>
 				<hp>-20</hp>
 				<hunger>-15</hunger>
 				<stamina>-25</stamina>
@@ -18,7 +18,7 @@
 		<choice>
 			<text>Apologise</text>
 			<outcome>
-				<text>Unsure of how to react, you apologise for skulking. The witch nods and begins walking towards you. As she closes in, she lays a hand on you and for a moment, you feel slightly dizzy. Once your head clears the realise the witch and hut are nowhere to be seen. </text>
+				<text>Unsure of how to react, you apologise for skulking. The witch nods and begins walking towards you. As she closes in, she briefly lays a hand on you, causing you to feel slightly dizzy. Once your head clears, you realise the witch and hut are nowhere to be seen.</text>
 				<stamina>-5</stamina>
 			</outcome>
 		</choice>

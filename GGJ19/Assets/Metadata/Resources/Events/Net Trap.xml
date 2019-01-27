@@ -6,9 +6,9 @@
 		<choice>
 			<text>Swing</text>
 			<outcome>
-				<text>By timing the shifting of your body weight, you manage to get the net to swing pendulously. This causes the suspending branch to snap, dropping you down to the ground with the heavy thud. It's a small price for freedom.</text>
-				<hp>-10</hp>
-				<stamina>-5</stamina>
+				<text>By timing the shifting of your body weight, you manage to get the net to swing pendulously. This causes the suspending branch to snap, dropping you to the ground with the heavy thud. It's a small price for freedom.</text>
+				<hp>-15</hp>
+				<stamina>-10</stamina>
 			</outcome>
 		</choice>
 		<choice>
