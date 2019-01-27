@@ -49,7 +49,7 @@ public class ParallaxLayer : MonoBehaviour
             if(m_randomlyInvertTiles)
             {
                 invert = (Random.Range(0,2) == 0);
-                Debug.Log(invert);
+                //Debug.Log(invert);
             }
             else if(m_invertAlternateTiles)
             {

@@ -127,10 +127,8 @@ public class EncounterUIController : MonoBehaviour
 
     public void AddFloatingText(Stat stat, int modifier, float delay)
     {
-        GameObject floatingTextObject = Instantiate(FloatingTextPrefab, transform.parent);
-
-        RectTransform floatingTextTransform = floatingTextObject.GetComponent<RectTransform>();
-        floatingTextTransform.anchoredPosition = FloatingTextSpawnTransform.anchoredPosition;
+        GameObject floatingTextObject = Instantiate(FloatingTextPrefab, FloatingTextSpawnTransform);
+        floatingTextObject.transform.localPosition = Vector3.zero;
 
         FloatingText floatingText = floatingTextObject.GetComponent<FloatingText>();
         floatingText.Delay = delay;
