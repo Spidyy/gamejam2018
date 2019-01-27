@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	<event>
+		<id>Wandering Merchant</id>
+		<text>You encounter what appears to be a merchant and their wagon stranded at the side of the road. "Can you help get this wheel attached to the wagon? I'll lift, you slide it on to the axel" they grumble.</text>
+		<tier>1</tier>
+		<choice>
+			<text>Help</text>
+			<outcome chance="40">
+				<text>As the merchant lifts, you raise the wheel, sliding it snuggly onto the wagon's axel. Once on, the merchant secures it and pads their brow. "You're a life saver, mate! I owe you one. Here, you can have this". The merchant cracks open a flavourful health tonic and passes it to you.</text>
+				<hp>+20</hp>
+			</outcome>
+			<outcome chance="40">
+				<text>The merchant raises the wagon as you attach the wheel, sliding it soundly onto the wagon's axel. Once on, the merchant secures it and pads their brow. "You're a life saver, mate! I owe you one. Here, you can have this". The merchant cracks open a refreshing energy tonic and passes it to you.</text>
+				<stamina>+20</stamina>
+			</outcome>
+			<outcome chance="20">
+				<text>The merchant lifts the wagon. As you attempt to attach the wheel, the merchant's grasp slips, causing the wagon's axel to crush your foot. The agony continues to shoots through you until the merchant raises the wagon again, allowing you to free yourself. Cursing, you hobble off, leaving the merchant to see to his own problems.</text>
+				<hp>-20</hp>
+			</outcome>
+		</choice>
+		<choice>
+			<text>Refuse</text>
+			<outcome chance="75">
+				<text>You explain to the merchant that you're in a terrible rush to get home and can't even spare a moment. At the sight of your apathy, the merchant rudely dismisses you.</text>
+			</outcome>
+			<outcome chance="25">
+				<text>You make up some wild excuse as to why you can't help the merchant as you back-pedalling homewards. He sees straight through your lies. As you wave and turn away, something smashes against the back of your head. Shards of glass shower the ground around you. The point of impact feels wet but warm. Looking back at your hand, you see blood and what must be ale.</text>
+				<hp>-15</hp>
+			</outcome>
+		</choice>
+	</event>
