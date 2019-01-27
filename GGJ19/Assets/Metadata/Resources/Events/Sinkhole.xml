@@ -1,31 +1,31 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 	<event>
-		<id>Wandering Merchant</id>
-		<text>You encounter what appears to be a merchant and their wagon stranded at the side of the road. "Can you help get this wheel attached to the wagon? I'll lift, you slide it on to the axel" they grumble.</text>
+		<id>Sinkhole</id>
+		<text>Without warning, a large hole opens up around you, dropping you a number of feet down into the earth. You land on your feet within the sinkhole but see no easy means of escape.</text>
 		<tier>1</tier>
 		<choice>
-			<text>Help</text>
-			<outcome chance="40">
-				<text>As the merchant lifts, you raise the wheel, sliding it snuggly onto the wagon's axel. Once on, the merchant secures it and pads their brow. "You're a life saver, mate! I owe you one. Here, you can have this". The merchant cracks open a flavourful health tonic and passes it to you.</text>
-				<hp>+20</hp>
+			<text>Climb</text>
+			<outcome chance="60">
+				<text>You attempt to climb out of the sinkhole using the roots and rocks that jut out from the pit's walls. Twice, you get tantalisingly close to the top before losing your footing and falling back down. On the third attempt, however, you manage to successfully make it out. Mildly exhausted, you swipe chucks of dirt off your clothing as move en route to home.</text>
+				<stamina>-20</stamina>
 			</outcome>
 			<outcome chance="40">
-				<text>The merchant raises the wagon as you attach the wheel, sliding it soundly onto the wagon's axel. Once on, the merchant secures it and pads their brow. "You're a life saver, mate! I owe you one. Here, you can have this". The merchant cracks open a refreshing energy tonic and passes it to you.</text>
-				<stamina>+20</stamina>
-			</outcome>
-			<outcome chance="20">
-				<text>The merchant lifts the wagon. As you attempt to attach the wheel, the merchant's grasp slips, causing the wagon's axel to crush your foot. The agony continues to shoots through you until the merchant raises the wagon again, allowing you to free yourself. Cursing, you hobble off, leaving the merchant to see to his own problems.</text>
-				<hp>-20</hp>
+				<text>Time and time again, your best efforts to escape the pit are thwarted by the loose stones and roots the line the cavities walls. You spend a little time reflecting on your failures before finally mustering the will to try again. Sometime later, you emerge from the sinkhole. The exhaustion brought on by the ordeal elipse the minor cuts and bruises caused by it.</text>
+				<hp>-10</hp>
+				<hunger>-20</huner>
+				<stamina>-30</stamina>
 			</outcome>
 		</choice>
 		<choice>
-			<text>Refuse</text>
-			<outcome chance="75">
-				<text>You explain to the merchant that you're in a terrible rush to get home and can't even spare a moment. At the sight of your apathy, the merchant rudely dismisses you.</text>
+			<text>Wait</text>
+			<outcome chance="80">
+				<text>You wait inside the sinkhole for a passerby to help you out. Minutes pass. Hours pass. Almost an entire day of rest passes before a wandering pilgrim walks by. Fortunately, they are eager to help someone in need, fetching a long sturdy branch used to fish you out of the pit. You thank them repeatedly before bidding each other farewell and going your separate ways.</text>
+				<hunger>-40</hunger>
+				<stamina>+40</stamina>
 			</outcome>
-			<outcome chance="25">
-				<text>You make up some wild excuse as to why you can't help the merchant as you back-pedalling homewards. He sees straight through your lies. As you wave and turn away, something smashes against the back of your head. Shards of glass shower the ground around you. The point of impact feels wet but warm. Looking back at your hand, you see blood and what must be ale.</text>
-				<hp>-15</hp>
+			<outcome chance="20">
+				<text>You decide it best to wait for help before considering exherting yourself. Miraculously, after what must only be 15 minutes, a rope is thrown down over the edge of the sinkhole. You grip it, tugging firmly before throwing your entire weight on to it. You climb out with ease, ready to praise whoever helped you out but there's nobody to be seen. You spend a minute looking around for any signs of a saviour but detect nothing. After saying thank you out loud, you press on for home.</text>
+				<stamina>-5</stamina>
 			</outcome>
 		</choice>
 	</event>
