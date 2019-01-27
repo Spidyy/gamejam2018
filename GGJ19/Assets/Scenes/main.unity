@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1359,12 +1359,12 @@ Prefab:
     - target: {fileID: 114371129102387144, guid: 16c17916b94ac4623bf39c1f83e8c621,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114371129102387144, guid: 16c17916b94ac4623bf39c1f83e8c621,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114883033179402322, guid: 16c17916b94ac4623bf39c1f83e8c621,
         type: 2}
@@ -1389,12 +1389,12 @@ Prefab:
     - target: {fileID: 114367154609754120, guid: 16c17916b94ac4623bf39c1f83e8c621,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114367154609754120, guid: 16c17916b94ac4623bf39c1f83e8c621,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114774550150585944, guid: 16c17916b94ac4623bf39c1f83e8c621,
         type: 2}
@@ -1439,7 +1439,7 @@ Prefab:
     - target: {fileID: 224979436777899088, guid: 16c17916b94ac4623bf39c1f83e8c621,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 1897588929163508, guid: 16c17916b94ac4623bf39c1f83e8c621, type: 2}
       propertyPath: m_IsActive
@@ -1532,6 +1532,36 @@ Prefab:
       value: 
       objectReference: {fileID: 21317586980076582, guid: ae1743a224f157846a55656b2627c475,
         type: 2}
+    - target: {fileID: 114371129102387144, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114371129102387144, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224819702156172408, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 224819702156172408, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 376
+      objectReference: {fileID: 0}
+    - target: {fileID: 224327549521270676, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 224327549521270676, guid: 16c17916b94ac4623bf39c1f83e8c621,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 376
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16c17916b94ac4623bf39c1f83e8c621, type: 2}
   m_IsPrefabParent: 0
@@ -1865,7 +1895,6 @@ MonoBehaviour:
   m_encounterUI: {fileID: 1374271055}
   encounterSystem: {fileID: 106466804}
   introScreenAnimator: {fileID: 1174133569}
-  pressAnyKeyText: {fileID: 685701329}
   m_state: 0
 --- !u!4 &1368696867
 Transform:

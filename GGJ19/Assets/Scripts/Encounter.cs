@@ -134,21 +134,25 @@ public class Encounter
         {
             if(Outcomes.Length == 1)
             {
+                Debug.Log("Only one outcome available.");
                 return Outcomes[0];
             }
             else if (Outcomes.Length > 1)
             {
                 float[] normalizedOutcomeChances = new float[Outcomes.Length];
-                normalizedOutcomeChances[0] = (Outcomes[0].Chance / TotalOutcomeChances);
+                normalizedOutcomeChances[0] = (Outcomes[0].Chance / (float)TotalOutcomeChances);
+                Debug.Log(string.Format("Outcome chance {0} : {1}", 0, normalizedOutcomeChances[0]));
                 for (int index = 1; index < Outcomes.Length; ++index)
                 {
-                    normalizedOutcomeChances[index] = (Outcomes[index].Chance / TotalOutcomeChances) + normalizedOutcomeChances[index - 1];
+                    normalizedOutcomeChances[index] = (Outcomes[index].Chance / (float)TotalOutcomeChances) + normalizedOutcomeChances[index - 1];
+                    Debug.Log(string.Format("Outcome chance {0} : {1}", 0, normalizedOutcomeChances[index]));
                 }
 
                 float random = Random.value;
                 float previousOutcomeChance = 0f;
                 for (int index = 0; index < Outcomes.Length; ++index)
                 {
+                    Debug.Log(string.Format("{0} < {1} < {2}", previousOutcomeChance, random, normalizedOutcomeChances[index]));
                     if (previousOutcomeChance < random && random < normalizedOutcomeChances[index])
                     {
                         Debug.Log(string.Format("Multiple outcomes, selected outcome {0}({1})", index, random));
@@ -158,6 +162,7 @@ public class Encounter
                 }
 
                 // Couldn't get an outcome from the random value, default to the first one.
+                Debug.Log("Couldn't fine an outcome.");
                 return Outcomes[0];
             }
             else
