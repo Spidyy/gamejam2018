@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &54982251
 RectTransform:
   m_ObjectHideFlags: 0
@@ -586,7 +586,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.1}
   m_AnchorMax: {x: 0.34, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -75.851, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &180411233
 GameObject:
@@ -998,7 +998,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -1400,7 +1400,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.1}
   m_AnchorMax: {x: 0.34, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -23.6, y: 0}
+  m_SizeDelta: {x: -75.851, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &459217551
 GameObject:
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.615
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2101,7 +2101,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -2276,7 +2276,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.1}
   m_AnchorMax: {x: 0.34, y: 0.95}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -75.851, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &904524762
 GameObject:
@@ -3049,7 +3049,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.615
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3225,7 +3225,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.615
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3618,27 +3618,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1909338604214136, guid: c5eaacc9a89e04f36b59350e4ddf3cd5, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224855189251501776, guid: c5eaacc9a89e04f36b59350e4ddf3cd5,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 96.42252
       objectReference: {fileID: 0}
     - target: {fileID: 224910157920861618, guid: c5eaacc9a89e04f36b59350e4ddf3cd5,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200.01758
       objectReference: {fileID: 0}
     - target: {fileID: 224896572062373878, guid: c5eaacc9a89e04f36b59350e4ddf3cd5,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200.01758
       objectReference: {fileID: 0}
     - target: {fileID: 224104158289855376, guid: c5eaacc9a89e04f36b59350e4ddf3cd5,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 96.42252
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5eaacc9a89e04f36b59350e4ddf3cd5, type: 2}
