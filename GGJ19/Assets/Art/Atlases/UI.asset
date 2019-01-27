@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Name: UI
   m_EditorClassIdentifier: 
   hashCode: 2748
-  material: {fileID: 21317586980076582}
+  material: {fileID: 21369155168428644}
   materialHashCode: 0
   spriteSheet: {fileID: 2800000, guid: 68d913b4d8da24189a52080beff83996, type: 3}
   spriteInfoList:
-  - id: 19
-    x: 181
-    y: 675
+  - id: 13
+    x: 769
+    y: 658
     width: 90
     height: 95
-    xOffset: -1.6
-    yOffset: 75.5
-    xAdvance: 90
+    xOffset: 8.4
+    yOffset: 79.43
+    xAdvance: 98.65
     scale: 1.6
     name: CoinIcon
     hashCode: -862023872
@@ -31,7 +31,7 @@ MonoBehaviour:
     pivot: {x: -45, y: 47.5}
     sprite: {fileID: 21300018, guid: 68d913b4d8da24189a52080beff83996, type: 3}
   fallbackSpriteAssets: []
---- !u!21 &21317586980076582
+--- !u!21 &21369155168428644
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 1
