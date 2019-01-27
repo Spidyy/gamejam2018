@@ -9,7 +9,6 @@ public enum Stat
 
 public static class StatConsts
 {
-
     public static readonly int[] k_startingValues = new int[]
     {
         100,            // hp
@@ -25,4 +24,6 @@ public static class StatConsts
         100,            // hun
         int.MaxValue    // gold
     };
+
+    public const float k_startHomeDistance = 100.0f;
 }
