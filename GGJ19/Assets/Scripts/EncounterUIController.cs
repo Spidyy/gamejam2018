@@ -5,15 +5,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EncounterUIController : MonoBehaviour
 {
     public GameObject m_choicePanel;
     public TMPro.TMP_Text m_choicePanelText;
+    public Button m_choiceButton1;
     public TMPro.TMP_Text m_choiceButton1Text;
-    public TMPro.TMP_Text m_choiceButton1Cost;
+    public Button m_choiceButton2;
     public TMPro.TMP_Text m_choiceButton2Text;
-    public TMPro.TMP_Text m_choiceButton2Cost;
 
     public GameObject m_outcomePanel;
     public TMPro.TMP_Text m_outcomeText;
@@ -46,35 +47,29 @@ public class EncounterUIController : MonoBehaviour
         m_choicePanelText.text = current.Text;
         if(current.Choices.Length >= 1)
         {
-            m_choiceButton1Text.text = current.Choices[0].Text;
+            m_choiceButton1.interactable = true;
 
+            string text = current.Choices[0].Text;
+            
             if(current.Choices[0].Outcomes != null && current.Choices[0].Outcomes.Length > 0)
             {
                 int modifier = current.Choices[0].Outcomes[0].GoldModifier;
                 if (modifier < 0)
                 {
-                    m_choiceButton1Cost.gameObject.SetActive(true);
                     int cost = Mathf.Abs(modifier);
                     if (cost > player.Gold)
                     {
-                        m_choiceButton1Cost.text = "This action require " + Mathf.Abs(current.Choices[0].Outcomes[0].GoldModifier).ToString() + "golds.";
-                        m_choiceButton1Cost.color = Color.red;
+                        text += "(<color=\"red\"><sprite=0> " + cost.ToString() + "</color>)";
+                        m_choiceButton1.interactable = false;
                     }
                     else
                     {
-                        m_choiceButton1Cost.text = "You will pay " + Mathf.Abs(current.Choices[0].Outcomes[0].GoldModifier).ToString() + "golds.";
-                        m_choiceButton1Cost.color = Color.white;
+                        text += " <sprite=0>" + cost.ToString();
                     }
                 }
-                else
-                {
-                    m_choiceButton1Cost.gameObject.SetActive(false);
-                }
             }
-            else
-            {
-                m_choiceButton1Cost.gameObject.SetActive(false);
-            }
+
+            m_choiceButton1Text.text = text;
         }
         else
         {
@@ -83,36 +78,29 @@ public class EncounterUIController : MonoBehaviour
 
         if (current.Choices.Length >= 2)
         {
-            m_choiceButton2Text.text = current.Choices[1].Text;
+            m_choiceButton2.interactable = true;
+            string text = current.Choices[1].Text;
+            
 
             if (current.Choices[1].Outcomes != null && current.Choices[1].Outcomes.Length > 0)
             {
                 int modifier = current.Choices[1].Outcomes[0].GoldModifier;
                 if (modifier < 0)
                 {
-                    m_choiceButton2Cost.gameObject.SetActive(true);
-
                     int cost = Mathf.Abs(modifier);
                     if (cost > player.Gold)
                     {
-                        m_choiceButton2Cost.text = "This action require " + cost.ToString() + "golds.";
-                        m_choiceButton2Cost.color = Color.red;
+                        text += " <color=\"red\"><sprite=0>" + cost.ToString() + "</color>";
+                        m_choiceButton2.interactable = false;
                     }
                     else
                     {
-                        m_choiceButton2Cost.text = "You will pay " + cost.ToString() + "golds.";
-                        m_choiceButton2Cost.color = Color.white;
+                        text += " <sprite=0>" + cost.ToString();
                     }
                 }
-                else
-                {
-                    m_choiceButton2Cost.gameObject.SetActive(false);
-                }
             }
-            else
-            {
-                m_choiceButton2Cost.gameObject.SetActive(false);
-            }
+
+            m_choiceButton2Text.text = text;
         }
         else
         {

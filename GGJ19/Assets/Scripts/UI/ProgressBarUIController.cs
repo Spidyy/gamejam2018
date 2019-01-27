@@ -9,7 +9,7 @@ public class ProgressBarUIController : MonoBehaviour
     public Slider m_slider = null;
 
     private float m_currentProgress = 0.0f;
-    private float m_targetProgress = 1.0f;
+    private float m_targetProgress = 0.0f;
 
     public float Progress {  get { return m_currentProgress; } }
 
@@ -22,7 +22,8 @@ public class ProgressBarUIController : MonoBehaviour
     //
     public void Initialise()
     {
-        UpdateProgress(1.0f);
+        m_currentProgress = 0.0f;
+        m_targetProgress = 1.0f;
     }
 
     // Set the new target progress
@@ -42,12 +43,5 @@ public class ProgressBarUIController : MonoBehaviour
             m_currentProgress += k_progressUpdateDelta * Time.smoothDeltaTime * sign;
             m_slider.value = m_currentProgress;
         }
-    }
-
-    // Update the slide progress
-    //
-    private void UpdateProgress(float progress)
-    {
-
     }
 }
