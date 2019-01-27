@@ -18,9 +18,9 @@ public class EndScreenUIController :MonoBehaviour
 
     private readonly Dictionary<Stat, string> k_deathStrings = new Dictionary<Stat, string>()
     {
-       { Stat.HP, "You Died. \n\nYour HP ran out" },
-       { Stat.STA, "You Died. \n\nYour STA ran out" },
-       { Stat.HUN, "You Died. \n\nYour HUN ran out" },
+       { Stat.HP, "You Died \n\nYour wounds proved too great to endure" },
+       { Stat.STA, "You Died \n\nYou black out from exhaustion, never to awaken" },
+       { Stat.HUN, "You Died \n\nLacking the fuel it needs, your body gives out" },
     };
 
     [SerializeField]
