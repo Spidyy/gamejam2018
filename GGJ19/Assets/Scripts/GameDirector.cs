@@ -11,11 +11,13 @@ using TagFramework;
 //
 public class GameDirector : MonoSingleton<GameDirector>
 {
+    public float m_minEventInterval = 3f;
+    public float m_maxEventInterval = 7f;
+
     private Player m_player;
 
     public EncounterUIController m_encounterUI;
     public EncounterSystem encounterSystem;
-    public float m_eventInterval = 5f;
     
     private ParallaxLayer[] m_scrollingObjects;
     private HudUIController m_hudUIController = null;
@@ -130,7 +132,7 @@ public class GameDirector : MonoSingleton<GameDirector>
 
     private float GenerateNextEventDistance()
     {
-        return m_nextEventDistance + m_eventInterval;
+        return m_nextEventDistance + Random.Range(m_minEventInterval, m_maxEventInterval);
     }
 
 }
