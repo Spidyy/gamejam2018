@@ -40,6 +40,15 @@ public class Player : MonoBehaviour
         m_prevHungerDecementDistance =
             m_prevStaminaDecementDistance = 
             m_currentDistance = 0.0f;
+
+        OnStatChange += OnStatChangeInternal;
+    }
+
+    // Clean-up
+    //
+    public void OnDestroy()
+    {
+        OnStatChange -= OnStatChangeInternal;
     }
 
     public int[] GenerateStartingStats()
@@ -117,5 +126,19 @@ public class Player : MonoBehaviour
     public void Update()
     {
         m_animator.SetFloat("Speed", m_moving ? 1f : 0f);
+    }
+
+    // Listener for stat changes 
+    //
+    private void OnStatChangeInternal(Stat stat, int newTotal, int delta)
+    {
+        if(stat == Stat.HUN)
+        {
+            if(delta > 0)
+            {
+                //--Reset the distance until the next decrement of hunger 
+                m_prevHungerDecementDistance = m_currentDistance;
+            }
+        }
     }
 }
