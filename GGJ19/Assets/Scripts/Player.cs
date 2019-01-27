@@ -81,6 +81,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    public float GetHomeDistance()
+    {
+        return m_homeDistance;
+    }
+
     // Set new distance until home
     //
     public void SetDistanceToHome(float distance)
