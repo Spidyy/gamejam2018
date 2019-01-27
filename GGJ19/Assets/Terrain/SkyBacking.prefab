@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_numTiles: 10
   m_invertAlternateTiles: 1
+  m_randomlyInvertTiles: 0
   m_scrollSpeed: 0
   m_prefabPath: SkyBackgroundTile
   m_overlapNormalised: 0

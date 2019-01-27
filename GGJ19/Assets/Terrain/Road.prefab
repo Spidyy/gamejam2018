@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_numTiles: 10
   m_invertAlternateTiles: 1
+  m_randomlyInvertTiles: 0
   m_scrollSpeed: 1
   m_prefabPath: RoadTile
   m_overlapNormalised: 0

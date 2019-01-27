@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_numTiles: 6
   m_invertAlternateTiles: 1
+  m_randomlyInvertTiles: 0
   m_scrollSpeed: 1.1
   m_prefabPath: GrassTile
   m_overlapNormalised: 0
